@@ -41,10 +41,10 @@ const createSortComponent = () => {
 };
 
 const createFilmsListComponent = () => {
-  const filmCardsComponent = createFilmCardsComponent(filmCards);
+  const filmCardsComponent = createFilmCardsComponent(FILM_CARDS_AMOUNT);
   const showMoreButtonComponent = createShowMoreButtonComponent();
-  const filmTopRatedCardsComponent = createFilmCardsComponent(filmTopRatedCards);
-  const filmMostCommentedCardsComponent = createFilmCardsComponent(filmMostCommentedCards);
+  const filmTopRatedCardsComponent = createFilmCardsComponent(FILM_RATED_CARDS_AMOUNT);
+  const filmMostCommentedCardsComponent = createFilmCardsComponent(FILM_COMMENTED_CARDS_AMOUNT);
 
   return (
     `<section class="films">
@@ -71,13 +71,13 @@ const createFilmsListComponent = () => {
   );
 };
 
-const createFilmCardsComponent = (filmsAmount) => {
+const createFilmCardsComponent = (amount) => {
   let filmCardsComponent = ``;
   const filmCardComponent = createFilmCardComponent();
 
-  filmsAmount.forEach(() => {
+  for (let i = 0; i < amount; i++) {
     filmCardsComponent = `${filmCardsComponent}${filmCardComponent}`;
-  });
+  }
 
   return filmCardsComponent;
 };

@@ -279,3 +279,11 @@ const createFilmDetailsComponent = () => {
 const renderComponent = (container, component, place = `beforeend`) => {
   container.insertAdjacentHTML(place, component);
 };
+
+
+renderComponent(pageHeaderElement, createProfileComponent());
+renderComponent(pageMainElement, createNavigationComponent());
+renderComponent(pageMainElement, createSortComponent());
+renderComponent(pageMainElement, createFilmsListComponent());
+renderComponent(pageFooterElement, createFilmStatisticsComponent());
+renderComponent(document.body, createFilmDetailsComponent());

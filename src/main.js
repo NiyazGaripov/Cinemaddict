@@ -70,3 +70,14 @@ const createFilmsListComponent = () => {
     </section>`
   );
 };
+
+const createFilmCardsComponent = (filmsAmount) => {
+  let filmCardsComponent = ``;
+  const filmCardComponent = createFilmCardComponent();
+
+  filmsAmount.forEach(() => {
+    filmCardsComponent = `${filmCardsComponent}${filmCardComponent}`;
+  });
+
+  return filmCardsComponent;
+};

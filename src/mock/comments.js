@@ -1,3 +1,10 @@
+const TEXT_COMMENTS = [
+  `Interesting setting and a good cast`,
+  `Booooooooooring`,
+  `Very very old. Meh`,
+  `Almost two hours? Seriously?`
+];
+
 const generateComment = () => {
   return {
     text: `Interesting setting and a good cast`,

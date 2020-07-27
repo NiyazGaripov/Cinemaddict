@@ -5,6 +5,13 @@ const TEXT_COMMENTS = [
   `Almost two hours? Seriously?`
 ];
 
+const EMOJIS = [
+  `smile`,
+  `sleeping`,
+  `puke`,
+  `angry`,
+];
+
 const generateComment = () => {
   return {
     text: `Interesting setting and a good cast`,

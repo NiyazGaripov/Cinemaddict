@@ -12,6 +12,13 @@ const EMOJIS = [
   `angry`,
 ];
 
+const COMMENT_AUTHORS = [
+  `Tim Macoveev`,
+  `John Doe`,
+  `Tim Doe`,
+  `John Macoveev`,
+];
+
 const generateComment = () => {
   return {
     text: `Interesting setting and a good cast`,

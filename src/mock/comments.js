@@ -38,6 +38,16 @@ const POSTERS = [
   `made-for-each-other`,
 ];
 
+const FILM_TITLES = [
+  `The Dance of Life`,
+  `Sagebrush Trail`,
+  `The Man with the Golden Arm`,
+  `Santa Claus Conquers the Martians`,
+  `Popeye the Sailor Meets Sindbad the Sailor`,
+  `The Great Flamarion`,
+  `Made for Each Other`,
+];
+
 const generateComment = () => {
   return {
     text: getRandomArrayItem(TEXT_COMMENTS),

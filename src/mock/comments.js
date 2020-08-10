@@ -28,6 +28,16 @@ const COMMENT_DATES = [
   `2020/03/21 15:30`,
 ];
 
+const POSTERS = [
+  `the-dance-of-life`,
+  `sagebrush-trail`,
+  `the-man-with-the-golden-arm`,
+  `santa-claus-conquers-the-martians`,
+  `popeye-meets-sinbad`,
+  `the-great-flamarion`,
+  `made-for-each-other`,
+];
+
 const generateComment = () => {
   return {
     text: getRandomArrayItem(TEXT_COMMENTS),

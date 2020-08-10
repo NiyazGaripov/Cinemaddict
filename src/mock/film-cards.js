@@ -1,5 +1,5 @@
 import {generateComments} from './comments.js';
-import {getRandomIntegerNumber, getRandomArrayItem} from './../utils/common';
+import {getRandomIntegerNumber, getRandomArrayItem} from './../utils/common.js';
 
 const MIN_COMMENTS_AMOUNT = 0;
 const MAX_COMMENTS_AMOUNT = 5;

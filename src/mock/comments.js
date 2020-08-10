@@ -1,3 +1,5 @@
+import {getRandomArrayItem} from './../utils/common.js';
+
 const TEXT_COMMENTS = [
   `Interesting setting and a good cast`,
   `Booooooooooring`,

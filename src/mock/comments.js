@@ -30,10 +30,10 @@ const COMMENT_DATES = [
 
 const generateComment = () => {
   return {
-    text: `Interesting setting and a good cast`,
-    emoji: `./images/emoji/smile.png`,
-    author: `Tim Macoveev`,
-    date: `2019/12/31 23:59`,
+    text: getRandomArrayItem(TEXT_COMMENTS),
+    emoji: getRandomArrayItem(EMOJIS),
+    author: getRandomArrayItem(COMMENT_AUTHORS),
+    date: getRandomArrayItem(COMMENT_DATES),
   };
 };
 

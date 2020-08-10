@@ -48,6 +48,15 @@ const FILM_TITLES = [
   `Made for Each Other`,
 ];
 
+const GENRE = [
+  `Musical`,
+  `Western`,
+  `Drama`,
+  `Comedy`,
+  `Cartoon`,
+  `Mystery`,
+];
+
 const generateComment = () => {
   return {
     text: getRandomArrayItem(TEXT_COMMENTS),

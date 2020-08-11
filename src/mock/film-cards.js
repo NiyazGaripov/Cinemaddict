@@ -11,6 +11,13 @@ const MIN_COMMENTS_AMOUNT = 0;
 const MAX_COMMENTS_AMOUNT = 5;
 const commentsAmount = getRandomIntegerNumber(MIN_COMMENTS_AMOUNT, MAX_COMMENTS_AMOUNT);
 const comments = generateComments(commentsAmount);
+const poster = getRandomArrayItem(POSTERS);
+const title = getRandomArrayItem(FILM_TITLES);
+const rating = `${getRandomIntegerNumber(MIN_RATING, MAX_RATING)}.${getRandomIntegerNumber(MIN_RATING, MAX_RATING)}`;
+const releaseYear = getRandomIntegerNumber(MIN_RELEASE_YEAR, MAX_RELEASE_YEAR);
+const duration = getRandomArrayItem(DURATION);
+const genre = getRandomArrayItem(GENRE);
+const description = getRandomArrayItem(DESCRIPTION_FILMS);
 
 const generateFilmCard = () => {
   return {

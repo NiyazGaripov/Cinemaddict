@@ -64,3 +64,13 @@ export const DESCRIPTION_FILMS = [
   `The film opens following a murder at a cabaret in Mexico City in 1936, and then presents the events leading up to it in flashback. The Grea…`,
   `John Mason (James Stewart) is a young, somewhat timid attorney in New York City. He has been doing his job well, and he has a chance of bei…`,
 ];
+
+export const DURATION = [
+  `1h 55m`,
+  `54m`,
+  `1h 59m`,
+  `1h 21m`,
+  `16m`,
+  `1h 18m`,
+  `1h 32m`,
+];

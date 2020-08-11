@@ -1,5 +1,5 @@
 import {POSTERS, FILM_TITLES, DURATION, GENRE, DESCRIPTION_FILMS} from './../constants.js';
-import {getRandomIntegerNumber, getRandomArrayItem} from './../utils/common.js';
+import {getRandomIntegerNumber} from './../utils/common.js';
 import {generateComments} from './comments.js';
 
 const MIN_COMMENTS_AMOUNT = 0;

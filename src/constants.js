@@ -74,3 +74,9 @@ export const DURATION = [
   `1h 18m`,
   `1h 32m`,
 ];
+
+export const PROFILE = [
+  `Novice`,
+  `Fan`,
+  `Movie Buff`,
+];

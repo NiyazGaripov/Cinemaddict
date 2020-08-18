@@ -80,3 +80,10 @@ export const PROFILES = [
   `Fan`,
   `Movie Buff`,
 ];
+
+export const NAVIGATION_ITEM_NAMES = [
+  `All movies`,
+  `Watchlist`,
+  `History`,
+  `Favorites`,
+];

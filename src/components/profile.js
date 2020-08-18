@@ -1,3 +1,6 @@
+import {PROFILE} from './../constants.js';
+import {getRandomArrayItem} from './../utils/common.js';
+
 export const createProfileComponent = () => {
   return (
     `<section class="header__profile profile">

@@ -46,7 +46,7 @@ export const FILM_TITLES = [
   `Made for Each Other`,
 ];
 
-export const GENRE = [
+export const GENRES = [
   `Musical`,
   `Western`,
   `Drama`,
@@ -65,7 +65,7 @@ export const DESCRIPTION_FILMS = [
   `John Mason (James Stewart) is a young, somewhat timid attorney in New York City. He has been doing his job well, and he has a chance of bei…`,
 ];
 
-export const DURATION = [
+export const DURATIONS = [
   `1h 55m`,
   `54m`,
   `1h 59m`,
@@ -75,7 +75,7 @@ export const DURATION = [
   `1h 32m`,
 ];
 
-export const PROFILE = [
+export const PROFILES = [
   `Novice`,
   `Fan`,
   `Movie Buff`,

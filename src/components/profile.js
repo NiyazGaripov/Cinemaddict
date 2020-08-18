@@ -1,8 +1,8 @@
-import {PROFILE} from './../constants.js';
+import {PROFILES} from './../constants.js';
 import {getRandomArrayItem} from './../utils/common.js';
 
 export const createProfileComponent = () => {
-  const userRank = getRandomArrayItem(PROFILE);
+  const userRank = getRandomArrayItem(PROFILES);
 
   return (
     `<section class="header__profile profile">

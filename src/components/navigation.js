@@ -1,3 +1,15 @@
+const createNavigationItemComponent = (item, isActive, hasCount) => {
+  const {path, title, amount} = item;
+  const activeClass = isActive ? `main-navigation__item--active` : ``;
+
+  return (
+    `<a href="#${path}" class="main-navigation__item ${activeClass}">
+      ${title}
+      ${hasCount ? `<span class="main-navigation__item-count">${amount}</span>` : ``}
+    </a>`
+  );
+};
+
 export const createNavigationComponent = () => {
   return (
     `<nav class="main-navigation">

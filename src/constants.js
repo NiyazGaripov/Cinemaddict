@@ -87,3 +87,9 @@ export const NAVIGATION_ITEM_NAMES = [
   `History`,
   `Favorites`,
 ];
+
+export const SORT_ITEM_NAMES = [
+  `default`,
+  `date`,
+  `rating`,
+];

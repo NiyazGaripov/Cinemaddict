@@ -1,4 +1,4 @@
-import {POSTERS, FILM_TITLES, DURATIONS, GENRES, DESCRIPTION_FILMS} from './../constants.js';
+import {POSTERS, FILM_TITLES, DURATIONS, GENRES, DESCRIPTION_FILMS, AGES} from './../constants.js';
 import {getRandomIntegerNumber, getRandomArrayItem} from './../utils/common.js';
 import {generateComments} from './comments.js';
 
@@ -18,6 +18,7 @@ const generateFilmCard = () => {
   const duration = getRandomArrayItem(DURATIONS);
   const genre = getRandomArrayItem(GENRES);
   const description = getRandomArrayItem(DESCRIPTION_FILMS);
+  const age = getRandomArrayItem(AGES);
   const commentsAmount = getRandomIntegerNumber(MIN_COMMENTS_AMOUNT, MAX_COMMENTS_AMOUNT);
   const comments = generateComments(commentsAmount);
   const isWatchList = Math.random() > 0.5;
@@ -32,6 +33,7 @@ const generateFilmCard = () => {
     duration,
     genre,
     description,
+    age,
     comments,
     isWatchList,
     isWatched,

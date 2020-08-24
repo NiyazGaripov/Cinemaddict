@@ -13,7 +13,7 @@ const pageMainElement = document.querySelector(`.main`);
 const pageFooterElement = document.querySelector(`.footer`);
 const navList = generateNavigationList();
 const sortList = generateSortList();
-console.log(sortList)
+
 renderComponent(pageHeaderElement, createProfileComponent());
 renderComponent(pageMainElement, createNavigationComponent(navList));
 renderComponent(pageMainElement, createSortComponent(sortList));

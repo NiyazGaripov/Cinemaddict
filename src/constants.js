@@ -99,3 +99,13 @@ export const AGES = [
   `12+`,
   `18+`
 ];
+
+export const DIRECTORS = [
+  `Anthony Mann`,
+  `Steven Spielberg`,
+  `Martin Scorsese`,
+  `Ridley Scott`,
+  `John Woo`,
+  `Christopher Nolan`,
+  `Peter Jackson`,
+];

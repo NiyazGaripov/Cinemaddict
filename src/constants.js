@@ -93,3 +93,9 @@ export const SORT_ITEM_NAMES = [
   `date`,
   `rating`,
 ];
+
+export const AGES = [
+  `6+`,
+  `12+`,
+  `18+`
+];

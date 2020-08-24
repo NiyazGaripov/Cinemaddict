@@ -109,3 +109,9 @@ export const DIRECTORS = [
   `Christopher Nolan`,
   `Peter Jackson`,
 ];
+
+export const WRITERS = [
+  `Anne Wigton`,
+  `Heinz Herald`,
+  `Richard Weil`,
+];

@@ -115,3 +115,9 @@ export const WRITERS = [
   `Heinz Herald`,
   `Richard Weil`,
 ];
+
+export const ACTORS = [
+  `Erich von Stroheim`,
+  `Mary Beth Hughes`,
+  `Dan Duryea`,
+];

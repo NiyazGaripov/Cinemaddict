@@ -19,6 +19,7 @@ const generateFilmCard = () => {
   const genre = getRandomArrayItem(GENRES);
   const description = getRandomArrayItem(DESCRIPTION_FILMS);
   const age = getRandomArrayItem(AGES);
+  const director = getRandomArrayItem(DIRECTORS);
   const commentsAmount = getRandomIntegerNumber(MIN_COMMENTS_AMOUNT, MAX_COMMENTS_AMOUNT);
   const comments = generateComments(commentsAmount);
   const isWatchList = Math.random() > 0.5;
@@ -34,6 +35,7 @@ const generateFilmCard = () => {
     genre,
     description,
     age,
+    director,
     comments,
     isWatchList,
     isWatched,

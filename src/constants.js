@@ -136,3 +136,11 @@ export const MONTH_NAMES = [
   `November`,
   `December`,
 ];
+
+export const COUNTRIES = [
+  `USA`,
+  `Russia`,
+  `England`,
+  `Norway`,
+  `Canada`,
+];

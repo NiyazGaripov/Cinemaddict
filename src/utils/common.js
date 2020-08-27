@@ -27,3 +27,11 @@ export const generateDescription = (desc, minAmount, maxAmount) => {
     .map(() => `${getRandomArrayItem(desc)}`)
     .join(` `);
 };
+
+export const getShortDescription = (desc, limit) => {
+  if (desc.length >= limit) {
+    return desc.slice(0, limit).trim() + `…`;
+  }
+
+  return desc;
+};

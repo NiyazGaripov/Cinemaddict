@@ -1,7 +1,11 @@
+import {CHARACTER_LIMIT} from './../constants.js'
+import {getShortDescription} from './../utils/common.js';
+
 export const createFilmCardComponent = (amount) => {
   const {poster, title, rating, release, duration, genre, description, comments, isWatchList, isWatched, isFavorite} = amount;
   const releaseYear = release.getFullYear();
   const commentsAmount = comments.length;
+  const shortDescription = getShortDescription(description, CHARACTER_LIMIT);
   const watchListActiveClass = isWatchList ? `film-card__controls-item--active` : ``;
   const watchedActiveClass = isWatched ? `film-card__controls-item--active` : ``;
   const favoriteActiveClass = isFavorite ? `film-card__controls-item--active` : ``;

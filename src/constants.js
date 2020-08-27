@@ -148,3 +148,5 @@ export const COUNTRIES = [
   `Norway`,
   `Canada`,
 ];
+
+export const CHARACTER_LIMIT = 140;

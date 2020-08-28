@@ -18,7 +18,8 @@ const generateFilmCard = () => {
   const rating = `${getRandomIntegerNumber(MIN_RATING, MAX_RATING)}.${getRandomIntegerNumber(MIN_RATING, MAX_RATING)}`;
   const release = getRandomDate();
   const duration = getRandomArrayItem(DURATIONS);
-  const genre = getRandomArrayItem(GENRES);
+  const genresAmount = getRandomIntegerNumber(MIN_GENRES_AMOUNT, MAX_GENRES_AMOUNT);
+  const genres = generateGenres(genresAmount);
   const description = generateDescription(DESCRIPTION_FILMS, MIN_SENTENCES_AMOUNT, MAX_SENTENCES_AMOUNT);
   const age = getRandomArrayItem(AGES);
   const director = getRandomArrayItem(DIRECTORS);
@@ -37,7 +38,7 @@ const generateFilmCard = () => {
     rating,
     release,
     duration,
-    genre,
+    genres,
     description,
     age,
     director,

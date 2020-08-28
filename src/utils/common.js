@@ -35,3 +35,9 @@ export const getShortDescription = (desc, limit) => {
 
   return desc;
 };
+
+export const setValueFormat = (value) => {
+  const COEFFICIENT = 10;
+
+  return value < COEFFICIENT ? `0${value}` : String(value);
+};

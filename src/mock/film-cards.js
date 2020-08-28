@@ -9,6 +9,8 @@ const MIN_COMMENTS_AMOUNT = 0;
 const MAX_COMMENTS_AMOUNT = 5;
 const MIN_SENTENCES_AMOUNT = 1;
 const MAX_SENTENCES_AMOUNT = 5;
+const MIN_GENRES_AMOUNT = 1;
+const MAX_GENRES_AMOUNT = 3;
 
 const generateFilmCard = () => {
   const poster = getRandomArrayItem(POSTERS);

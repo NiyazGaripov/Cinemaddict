@@ -1,6 +1,7 @@
-import {POSTERS, FILM_TITLES, DURATIONS, GENRES, DESCRIPTION_FILMS, AGES, DIRECTORS, WRITERS, ACTORS, COUNTRIES} from './../constants.js';
+import {POSTERS, FILM_TITLES, DURATIONS, DESCRIPTION_FILMS, AGES, DIRECTORS, WRITERS, ACTORS, COUNTRIES} from './../constants.js';
 import {getRandomIntegerNumber, getRandomArrayItem, getRandomDate, generateDescription} from './../utils/common.js';
 import {generateComments} from './comments.js';
+import {generateGenres} from './genres.js';
 
 const MIN_RATING = 0;
 const MAX_RATING = 9;

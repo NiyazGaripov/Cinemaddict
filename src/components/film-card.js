@@ -1,8 +1,9 @@
 import {CHARACTER_LIMIT} from './../constants.js'
-import {getShortDescription} from './../utils/common.js';
+import {getRandomArrayItem, getShortDescription} from './../utils/common.js';
 
 export const createFilmCardComponent = (amount) => {
-  const {poster, title, rating, release, duration, genre, description, comments, isWatchList, isWatched, isFavorite} = amount;
+  const {poster, title, rating, release, duration, genres, description, comments, isWatchList, isWatched, isFavorite} = amount;
+  const genre = getRandomArrayItem(genres);
   const releaseYear = release.getFullYear();
   const commentsAmount = comments.length;
   const shortDescription = getShortDescription(description, CHARACTER_LIMIT);
@@ -17,7 +18,7 @@ export const createFilmCardComponent = (amount) => {
       <p class="film-card__info">
         <span class="film-card__year">${releaseYear}</span>
         <span class="film-card__duration">${duration}</span>
-        <span class="film-card__genre">${genre}</span>
+        <span class="film-card__genre">${genre.name}</span>
       </p>
       <img src="./images/posters/${poster}" alt="${title}" class="film-card__poster">
       <p class="film-card__description">${shortDescription}</p>

@@ -1,3 +1,6 @@
+import {MONTH_NAMES} from './../constants.js';
+import {createCommentsComponent} from './comments.js';
+
 export const createFilmDetailsComponent = () => {
   return (
     `<section class="film-details">

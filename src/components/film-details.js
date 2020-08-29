@@ -1,6 +1,15 @@
 import {MONTH_NAMES} from './../constants.js';
 import {createCommentsComponent} from './comments.js';
 
+const createGenresMarkup = (genres) => {
+  return genres.map((genre) => {
+    return (
+      `<span class="film-details__genre">${genre.name}</span>`
+    );
+  }).join(`\n`);
+
+};
+
 export const createFilmDetailsComponent = () => {
   return (
     `<section class="film-details">

@@ -10,7 +10,9 @@ const createGenresMarkup = (genres) => {
 
 };
 
-export const createFilmDetailsComponent = () => {
+export const createFilmDetailsComponent = (film) => {
+  const {poster, title, rating, release, duration, genres, description, age, director, writers, actors, country, comments, isWatchList, isWatched, isFavorite} = film;
+
   return (
     `<section class="film-details">
       <form class="film-details__inner" action="" method="get">

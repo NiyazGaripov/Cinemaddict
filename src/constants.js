@@ -142,4 +142,19 @@ export const COUNTRIES = [
   `Canada`,
 ];
 
+export const FILM_SECTIONS = [
+  {
+    section: ``,
+    title: `All movies. Upcoming`
+  },
+  {
+    section: `extra`,
+    title: `Top rated`
+  },
+  {
+    section: `extra`,
+    title: `Most commented`
+  }
+];
+
 export const CHARACTER_LIMIT = 140;

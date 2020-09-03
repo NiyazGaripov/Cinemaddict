@@ -1,3 +1,4 @@
+import {FILM_SECTIONS} from './constants.js';
 import {renderComponent} from './utils/render.js';
 import {createProfileComponent} from './components/profile.js';
 import {createNavigationComponent} from './components/navigation.js';

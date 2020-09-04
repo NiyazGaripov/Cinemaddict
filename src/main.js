@@ -18,6 +18,10 @@ const pageFooter = document.querySelector(`.footer`);
 const navList = generateNavigationList();
 const sortList = generateSortList();
 
+const FILM_CARDS_AMOUNT = 20;
+const FILM_RATED_CARDS_AMOUNT = 15;
+const FILM_COMMENTED_CARDS_AMOUNT = 10;
+
 renderComponent(pageHeader, createProfileComponent());
 renderComponent(pageMain, createNavigationComponent(navList));
 renderComponent(pageMain, createSortComponent(sortList));

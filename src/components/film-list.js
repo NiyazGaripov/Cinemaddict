@@ -13,7 +13,7 @@ const createFilmSectionsComponent = (item) => {
   );
 };
 
-const createFilmsListComponent = (sections) => {
+export const createFilmsListComponent = (sections) => {
   const filmSections = sections.map((section) => createFilmSectionsComponent(section)).join(`\n`);
 
   return (

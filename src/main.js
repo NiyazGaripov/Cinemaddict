@@ -32,6 +32,6 @@ const filmMostCommentedCardsComponent = createFilmCardsComponent(filmCardsMostCo
 renderComponent(pageHeader, createProfileComponent());
 renderComponent(pageMain, createNavigationComponent(navList));
 renderComponent(pageMain, createSortComponent(sortList));
-renderComponent(pageMain, createFilmsListComponent());
+renderComponent(pageMain, createFilmsListComponent(FILM_SECTIONS));
 renderComponent(pageFooter, createFilmStatisticsComponent());
 renderComponent(document.body, createFilmDetailsComponent());

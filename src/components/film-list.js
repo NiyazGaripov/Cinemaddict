@@ -10,8 +10,8 @@ const createFilmSectionsComponent = (item) => {
 
       <div class="films-list__container"></div>
     </section>`
-  )
-}
+  );
+};
 
 const createFilmsListComponent = (sections) => {
   const filmSections = sections.map((section) => createFilmSectionsComponent(section)).join(`\n`);

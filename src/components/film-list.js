@@ -1,6 +1,5 @@
 const createFilmSectionsComponent = (item) => {
   const {section, title} = item;
-
   const sectionClass = section === `extra` ? `films-list--extra` : `films-list`;
   const hiddenClass = section === `extra` ? `` : `visually-hidden`;
 

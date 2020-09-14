@@ -1,3 +1,7 @@
+const MIN_COEFFICIENT = 0;
+const MAX_COEFFICIENT = 30000;
+const MAX_VALUE = 10;
+
 export const getRandomIntegerNumber = (min, max) => {
   return min + Math.floor(Math.random() * (max - min));
 };
@@ -9,8 +13,6 @@ export const getRandomArrayItem = (array) => {
 };
 
 export const getRandomDate = () => {
-  const MIN_COEFFICIENT = 0;
-  const MAX_COEFFICIENT = 30000;
   const targetDate = new Date();
   const diffValue = getRandomIntegerNumber(MIN_COEFFICIENT, MAX_COEFFICIENT);
 
@@ -37,7 +39,5 @@ export const getShortDescription = (desc, limit) => {
 };
 
 export const setValueFormat = (value) => {
-  const COEFFICIENT = 10;
-
-  return value < COEFFICIENT ? `0${value}` : String(value);
+  return value < MAX_VALUE ? `0${value}` : String(value);
 };

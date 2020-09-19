@@ -4,5 +4,12 @@ export const RenderPosition = {
 };
 
 export const renderComponent = (container, component, place = `beforeend`) => {
-  container.insertAdjacentHTML(place, component);
+  switch (place) {
+    case RenderPosition.AFTERBEGIN:
+      container.prepend(component);
+      break;
+    case RenderPosition.BEFOREEND:
+      container.append(component);
+      break;
+  }
 };

@@ -38,5 +38,9 @@ export const createCommentsComponent = (comments) => {
 };
 
 class Comment {
+  constructor(comments) {
+    this._comments = comments;
+    this._element = null;
+  }
 
 }

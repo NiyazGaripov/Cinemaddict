@@ -1,4 +1,4 @@
-import {setValueFormat} from './../utils/common.js';
+import {setValueFormat, createElement} from './../utils/common.js';
 
 const createCommentComponent = (comment) => {
   const {text, emoji, author, date} = comment;

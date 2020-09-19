@@ -55,4 +55,7 @@ class Comment {
     return this._element;
   }
 
+  removeElement() {
+    this._element = null;
+  }
 }

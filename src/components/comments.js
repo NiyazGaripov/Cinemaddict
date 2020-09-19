@@ -43,4 +43,8 @@ class Comment {
     this._element = null;
   }
 
+  getTemplate() {
+    return createCommentsComponent(this._comments);
+  }
+
 }

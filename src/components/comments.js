@@ -36,3 +36,7 @@ export const createCommentsComponent = (comments) => {
     </ul>`
   );
 };
+
+class Comment {
+
+}

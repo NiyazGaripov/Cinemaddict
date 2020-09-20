@@ -1,8 +1,8 @@
 import {CHARACTER_LIMIT} from './../constants.js';
 import {getRandomArrayItem, getShortDescription, createElement} from './../utils/common.js';
 
-export const createFilmCardComponent = (amount) => {
-  const {poster, title, rating, release, duration, genres, description, comments, isWatchList, isWatched, isFavorite} = amount;
+export const createFilmCardComponent = (filmCard) => {
+  const {poster, title, rating, release, duration, genres, description, comments, isWatchList, isWatched, isFavorite} = filmCard;
   const genre = getRandomArrayItem(genres);
   const releaseYear = release.getFullYear();
   const commentsAmount = comments.length;

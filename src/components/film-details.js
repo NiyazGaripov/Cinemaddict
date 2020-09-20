@@ -1,5 +1,6 @@
 import {MONTH_NAMES} from './../constants.js';
 import {Comment} from './comments.js';
+import {createElement} from './../utils/common.js';
 
 const createGenresMarkup = (genres) => {
   return genres.map((genre) => {
@@ -10,7 +11,7 @@ const createGenresMarkup = (genres) => {
 
 };
 
-export const createFilmDetailsComponent = (film) => {
+const createFilmDetailsComponent = (film) => {
   const {poster, title, rating, release, duration, genres, description, age, director, writers, actors, country, comments, isWatchList, isWatched, isFavorite} = film;
   const releaseDate = `${release.getDate()} ${MONTH_NAMES[release.getMonth()]} ${release.getFullYear()}`;
   const createGenres = createGenresMarkup(genres);
@@ -122,3 +123,26 @@ export const createFilmDetailsComponent = (film) => {
     </section>`
   );
 };
+
+export class FilmInfo {
+  constructor(film) {
+    this._film = film;
+    this._element = null;
+  }
+
+  getTemplate() {
+    return createFilmDetailsComponent(this._film);
+  }
+
+  getElement() {
+    if (!this._element) {
+      this._element = createElement(this.getTemplate());
+    }
+
+    return this._element;
+  }
+
+  removeElement() {
+    this._element = null;
+  }
+}

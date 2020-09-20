@@ -1,5 +1,5 @@
 import {MONTH_NAMES} from './../constants.js';
-import {createCommentsComponent} from './comments.js';
+import {Comment} from './comments.js';
 
 const createGenresMarkup = (genres) => {
   return genres.map((genre) => {
@@ -15,7 +15,7 @@ export const createFilmDetailsComponent = (film) => {
   const releaseDate = `${release.getDate()} ${MONTH_NAMES[release.getMonth()]} ${release.getFullYear()}`;
   const createGenres = createGenresMarkup(genres);
   const commentsAmount = comments.length;
-  const commentList = createCommentsComponent(comments);
+  const commentList = new Comment(comments).getElement();
 
   return (
     `<section class="film-details">

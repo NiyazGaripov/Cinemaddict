@@ -27,7 +27,7 @@ const createCommentComponent = (comment) => {
   );
 };
 
-export const createCommentsComponent = (comments) => {
+const createCommentsComponent = (comments) => {
   const commentsComponent = comments.map((comment) => createCommentComponent(comment)).join(`\n`);
 
   return (
@@ -37,7 +37,7 @@ export const createCommentsComponent = (comments) => {
   );
 };
 
-class Comment {
+export class Comment {
   constructor(comments) {
     this._comments = comments;
     this._element = null;

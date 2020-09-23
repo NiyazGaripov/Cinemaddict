@@ -1,7 +1,7 @@
 import {PROFILES} from './../constants.js';
-import {getRandomArrayItem} from './../utils/common.js';
+import {getRandomArrayItem, createElement} from './../utils/common.js';
 
-export const createProfileComponent = () => {
+const createProfileComponent = () => {
   const userRank = getRandomArrayItem(PROFILES);
 
   return (
@@ -11,3 +11,25 @@ export const createProfileComponent = () => {
     </section>`
   );
 };
+
+export class Profile {
+  constructor() {
+    this._element = null;
+  }
+
+  getTemplate() {
+    return createProfileComponent();
+  }
+
+  getElement() {
+    if (!this._element) {
+      this._element = createElement(this.getTemplate());
+    }
+
+    return this._element;
+  }
+
+  removeElement() {
+    this._element = null;
+  }
+}

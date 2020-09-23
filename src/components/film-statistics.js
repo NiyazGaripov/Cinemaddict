@@ -8,7 +8,7 @@ const createFilmStatisticsComponent = () => {
   );
 };
 
-class FilmStatistics {
+export class FilmStatistics {
   constructor() {
     this._element = null;
   }

@@ -19,6 +19,12 @@ const BEGIN_INDEX = 0;
 const FILM_CARDS_AMOUNT_ON_START = 5;
 const FILM_CARDS_AMOUNT_LOAD_MORE = 5;
 
+const renderFilmCard = (filmsListContainer, filmCard) => {
+  const filmCardComponent = new FilmCard(filmCard);
+
+  renderComponent(filmsListContainer, filmCardComponent.getElement());
+};
+
 const pageHeader = document.querySelector(`.header`);
 const pageMain = document.querySelector(`.main`);
 const pageFooter = document.querySelector(`.footer`);

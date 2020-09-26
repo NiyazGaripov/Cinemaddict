@@ -94,3 +94,5 @@ renderComponent(pageMain, filmListComponent.getElement());
 renderFilmList(filmListComponent, filmCards);
 renderFilmListTopRated(filmListComponent, filmCardsTopRated);
 renderFilmListMostCommented(filmListComponent, filmCardsMostCommented);
+
+renderComponent(pageFooter, new FilmStatistics().getElement());

@@ -1,5 +1,6 @@
 import {FILM_SECTIONS} from './constants.js';
 import {renderComponent} from './utils/render.js';
+import {onEscKeyDown} from './utils/common.js';
 import {Profile} from './components/profile.js';
 import {Navigation} from './components/navigation.js';
 import {Sort} from './components/sort.js';
@@ -30,22 +31,18 @@ const renderFilmCard = (filmsListContainer, filmCard) => {
   const showFilmDetails = () => {
     body.classList.add(`hide-overflow`);
     body.appendChild(filmInfoComponent.getElement());
-    document.addEventListener(`keydown`, onEscKeyDown);
+    document.addEventListener(`keydown`, onDocumentEscKeyDown);
   };
 
   const hideFilmDetails = () => {
     body.classList.remove(`hide-overflow`);
     body.removeChild(filmInfoComponent.getElement());
-    document.removeEventListener(`keydown`, onEscKeyDown);
+    document.removeEventListener(`keydown`, onDocumentEscKeyDown);
   };
 
-  const onEscKeyDown = (evt) => {
-    const isEscKey = evt.key === `Escape` || evt.key === `Esc`;
-
-    if (isEscKey) {
-      hideFilmDetails();
-      document.removeEventListener(`keydown`, onEscKeyDown);
-    }
+  const onDocumentEscKeyDown = (evt) => {
+    onEscKeyDown(evt, hideFilmDetails);
+    document.removeEventListener(`keydown`, onDocumentEscKeyDown);
   };
 
   const setEventListener = (element, callback) => {

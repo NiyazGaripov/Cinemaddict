@@ -1,6 +1,7 @@
 const MIN_COEFFICIENT = 0;
 const MAX_COEFFICIENT = 30000;
 const MAX_VALUE = 10;
+const ESC_KEYCODE = 27;
 
 export const getRandomIntegerNumber = (min, max) => {
   return min + Math.floor(Math.random() * (max - min));
@@ -47,4 +48,10 @@ export const createElement = (template) => {
   newElement.innerHTML = template;
 
   return newElement.firstChild;
+};
+
+export const onEscKeyDown = (evt, calback) => {
+  if (evt.keyCode === ESC_KEYCODE) {
+    calback();
+  }
 };

@@ -45,8 +45,8 @@ const renderFilmCard = (filmsListContainer, filmCard) => {
     document.removeEventListener(`keydown`, onDocumentEscKeyDown);
   };
 
-  const setEventListener = (element, callback) => {
-    element.addEventListener(`click`, () => {
+  const setEventListener = (element, evt, callback) => {
+    element.addEventListener(evt, () => {
       callback();
     });
   };

@@ -1,5 +1,6 @@
 import {CHARACTER_LIMIT} from './../constants.js';
-import {getRandomArrayItem, getShortDescription, createElement} from './../utils/common.js';
+import {getRandomArrayItem, getShortDescription} from './../utils/common.js';
+import {AbstractComponent} from "./abstract-component";
 
 const createFilmCardComponent = (filmCard) => {
   const {poster, title, rating, release, duration, genres, description, comments, isWatchList, isWatched, isFavorite} = filmCard;
@@ -32,25 +33,13 @@ const createFilmCardComponent = (filmCard) => {
   );
 };
 
-export class FilmCard {
+export class FilmCard extends AbstractComponent {
   constructor(filmCard) {
+    super();
     this._filmCard = filmCard;
-    this._element = null;
   }
 
   getTemplate() {
     return createFilmCardComponent(this._filmCard);
-  }
-
-  getElement() {
-    if (!this._element) {
-      this._element = createElement(this.getTemplate());
-    }
-
-    return this._element;
-  }
-
-  removeElement() {
-    this._element = null;
   }
 }

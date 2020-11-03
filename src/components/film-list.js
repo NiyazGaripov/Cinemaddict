@@ -1,4 +1,4 @@
-import {createElement} from './../utils/common.js';
+import {AbstractComponent} from "./abstract-component";
 
 const createFilmSectionsComponent = (item) => {
   const {section, title} = item;
@@ -24,25 +24,13 @@ const createFilmListComponent = (sections) => {
   );
 };
 
-export class FilmList {
+export class FilmList extends AbstractComponent {
   constructor(sections) {
+    super();
     this._sections = sections;
-    this._element = null;
   }
 
   getTemplate() {
     return createFilmListComponent(this._sections);
-  }
-
-  getElement() {
-    if (!this._element) {
-      this._element = createElement(this.getTemplate());
-    }
-
-    return this._element;
-  }
-
-  removeElement() {
-    this._element = null;
   }
 }

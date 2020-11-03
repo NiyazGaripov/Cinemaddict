@@ -1,4 +1,4 @@
-import {createElement} from './../utils/common.js';
+import {AbstractComponent} from "./abstract-component";
 
 const createFilmStatisticsComponent = () => {
   return (
@@ -8,24 +8,8 @@ const createFilmStatisticsComponent = () => {
   );
 };
 
-export class FilmStatistics {
-  constructor() {
-    this._element = null;
-  }
-
+export class FilmStatistics extends AbstractComponent {
   getTemplate() {
     return createFilmStatisticsComponent();
-  }
-
-  getElement() {
-    if (!this._element) {
-      this._element = createElement(this.getTemplate());
-    }
-
-    return this._element;
-  }
-
-  removeElement() {
-    this._element = null;
   }
 }

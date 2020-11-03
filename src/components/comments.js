@@ -1,4 +1,5 @@
-import {setValueFormat, createElement} from './../utils/common.js';
+import {setValueFormat} from './../utils/common.js';
+import {AbstractComponent} from "./abstract-component";
 
 const createCommentComponent = (comment) => {
   const {text, emoji, author, date} = comment;
@@ -37,25 +38,13 @@ const createCommentsComponent = (comments) => {
   );
 };
 
-export class Comment {
+export class Comment extends AbstractComponent {
   constructor(comments) {
+    super();
     this._comments = comments;
-    this._element = null;
   }
 
   getTemplate() {
     return createCommentsComponent(this._comments);
-  }
-
-  getElement() {
-    if (!this._element) {
-      this._element = createElement(this.getTemplate());
-    }
-
-    return this._element;
-  }
-
-  removeElement() {
-    this._element = null;
   }
 }

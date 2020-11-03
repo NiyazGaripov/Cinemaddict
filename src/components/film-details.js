@@ -1,6 +1,6 @@
 import {MONTH_NAMES} from './../constants.js';
 import {Comment} from './comments.js';
-import {createElement} from './../utils/common.js';
+import {AbstractComponent} from "./abstract-component";
 
 const createGenresMarkup = (genres) => {
   return genres.map((genre) => {
@@ -124,25 +124,13 @@ const createFilmDetailsComponent = (film) => {
   );
 };
 
-export class FilmInfo {
+export class FilmInfo extends AbstractComponent {
   constructor(film) {
+    super();
     this._film = film;
-    this._element = null;
   }
 
   getTemplate() {
     return createFilmDetailsComponent(this._film);
-  }
-
-  getElement() {
-    if (!this._element) {
-      this._element = createElement(this.getTemplate());
-    }
-
-    return this._element;
-  }
-
-  removeElement() {
-    this._element = null;
   }
 }

@@ -1,5 +1,6 @@
 import {CHARACTER_LIMIT} from './../constants.js';
-import {getRandomArrayItem, getShortDescription} from './../utils/common.js';
+import {getRandomArrayItem} from './../utils/common.js';
+import {getShortDescription} from './../utils/text.js';
 import {AbstractComponent} from "./abstract-component";
 
 const createFilmCardComponent = (filmCard) => {

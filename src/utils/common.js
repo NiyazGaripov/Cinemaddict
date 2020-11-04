@@ -43,13 +43,6 @@ export const setValueFormat = (value) => {
   return value < MAX_VALUE ? `0${value}` : String(value);
 };
 
-export const createElement = (template) => {
-  const newElement = document.createElement(`div`);
-  newElement.innerHTML = template;
-
-  return newElement.firstChild;
-};
-
 export const onEscKeyDown = (evt, calback) => {
   if (evt.keyCode === ESC_KEYCODE) {
     calback();

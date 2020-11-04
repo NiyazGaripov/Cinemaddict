@@ -1,4 +1,4 @@
-import {createElement} from './../utils/common.js';
+import {AbstractComponent} from "./abstract-component";
 
 const createNavigationItemComponent = (item, isActive, hasCount) => {
   const {path, title, amount} = item;
@@ -25,25 +25,13 @@ const createNavigationComponent = (list) => {
   );
 };
 
-export class Navigation {
+export class Navigation extends AbstractComponent {
   constructor(list) {
+    super();
     this._list = list;
-    this._element = null;
   }
 
   getTemplate() {
     return createNavigationComponent(this._list);
-  }
-
-  getElement() {
-    if (!this._element) {
-      this._element = createElement(this.getTemplate());
-    }
-
-    return this._element;
-  }
-
-  removeElement() {
-    this._element = null;
   }
 }

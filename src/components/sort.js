@@ -1,4 +1,4 @@
-import {createElement} from './../utils/common.js';
+import {AbstractComponent} from "./abstract-component";
 
 const createSortItemComponent = (item, isActive) => {
   const {title} = item;
@@ -21,25 +21,13 @@ const createSortComponent = (list) => {
   );
 };
 
-export class Sort {
+export class Sort extends AbstractComponent {
   constructor(list) {
+    super();
     this._list = list;
-    this._element = null;
   }
 
   getTemplate() {
     return createSortComponent(this._list);
-  }
-
-  getElement() {
-    if (!this._element) {
-      this._element = createElement(this.getTemplate());
-    }
-
-    return this._element;
-  }
-
-  removeElement() {
-    this._element = null;
   }
 }

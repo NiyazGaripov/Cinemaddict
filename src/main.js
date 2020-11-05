@@ -1,5 +1,5 @@
 import {FILM_SECTIONS} from './constants.js';
-import {renderComponent} from './utils/render.js';
+import {renderComponent, removeComponent} from './utils/render.js';
 import {onEscKeyDown} from './utils/common.js';
 import {Profile} from './components/profile.js';
 import {Navigation} from './components/navigation.js';
@@ -95,8 +95,7 @@ const renderFilmList = (filmListComponent, filmCards) => {
     renderCards(filmCards, filmsListContainer, prevFilmCards, showingFilmCards);
 
     if (showingFilmCards >= filmCards.length) {
-      showMoreButtonComponent.getElement().remove();
-      showMoreButtonComponent.removeElement();
+      removeComponent(showMoreButtonComponent);
     }
   });
 };

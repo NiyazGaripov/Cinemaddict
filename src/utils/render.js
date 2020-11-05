@@ -20,3 +20,8 @@ export const createElement = (template) => {
 
   return newElement.firstChild;
 };
+
+export const removeComponent = (component) => {
+  component.getElement().remove();
+  component.removeElement();
+};

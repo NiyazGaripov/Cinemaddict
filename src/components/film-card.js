@@ -45,8 +45,8 @@ export class FilmCard extends AbstractComponent {
   }
 
   setClickHandler(callback) {
-    this.getTemplate().querySelector(`img`).addEventListener(`click`, callback);
-    this.getTemplate().querySelector(`.film-card__title`).addEventListener(`click`, callback);
-    this.getTemplate().querySelector(`.film-card__comments`).addEventListener(`click`, callback);
+    this.getElement().querySelector(`img`).addEventListener(`click`, callback);
+    this.getElement().querySelector(`.film-card__title`).addEventListener(`click`, callback);
+    this.getElement().querySelector(`.film-card__comments`).addEventListener(`click`, callback);
   }
 }

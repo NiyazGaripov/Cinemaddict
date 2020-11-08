@@ -135,6 +135,6 @@ export class FilmInfo extends AbstractComponent {
   }
 
   setClickHandler(callback) {
-    this.getTemplate().querySelector(`.film-details__close-btn`).addEventListener(`click`, callback);
+    this.getElement().querySelector(`.film-details__close-btn`).addEventListener(`click`, callback);
   }
 }

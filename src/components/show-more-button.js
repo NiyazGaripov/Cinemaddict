@@ -12,6 +12,6 @@ export class ShowMoreButton extends AbstractComponent {
   }
 
   setClickHandler(callback) {
-    this.getTemplate().addEventListener(`click`, callback);
+    this.getElement().addEventListener(`click`, callback);
   }
 }

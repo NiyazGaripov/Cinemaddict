@@ -4,15 +4,6 @@ import {FilmInfo} from '../components/film-details';
 import {removeComponent, renderComponent} from '../utils/render';
 import {NoData} from '../components/no-data';
 import {ShowMoreButton} from '../components/show-more-button';
-import {generateNavigationList} from '../mock/nav-list';
-import {generateSortList} from '../mock/sort-list';
-import {generateFilmsCards} from '../mock/film-cards';
-import {Profile} from '../components/profile';
-import {Navigation} from '../components/navigation';
-import {Sort} from '../components/sort';
-import {FilmList} from '../components/film-list';
-import {FILM_SECTIONS} from '../constants';
-import {FilmStatistics} from '../components/film-statistics';
 
 const FILM_CARDS_AMOUNT_ON_START = 5;
 const FILM_CARDS_AMOUNT_LOAD_MORE = 5;

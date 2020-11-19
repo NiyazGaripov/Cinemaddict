@@ -30,4 +30,8 @@ export class Sort extends AbstractComponent {
   getTemplate() {
     return createSortComponent();
   }
+
+  getSortType() {
+    return this._currentSortType;
+  }
 }

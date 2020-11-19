@@ -158,3 +158,9 @@ export const FILM_SECTIONS = [
 ];
 
 export const CHARACTER_LIMIT = 140;
+
+export const SortType = {
+  DEFAULT: `default`,
+  DATE: `date`,
+  RATING: `rating`,
+};

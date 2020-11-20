@@ -86,6 +86,15 @@ export class PageController {
 
     renderFilmCards(films.slice(BEGIN_INDEX, showingFilmCards), filmsListContainer);
     renderShowMoreButton();
+
+    this._sortComponent.setSortTypeChangeHandler(() => {
+      showingFilmCards += FILM_CARDS_AMOUNT_LOAD_MORE;
+
+      filmsListContainer.innerHTML = ``;
+
+      renderFilmCards(films.slice(BEGIN_INDEX, showingFilmCards), filmsListContainer);
+      renderShowMoreButton();
+    });
   }
 
   renderFilmsExtra(films, className) {

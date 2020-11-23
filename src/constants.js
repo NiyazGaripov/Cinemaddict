@@ -164,3 +164,5 @@ export const SortType = {
   DATE: `date`,
   RATING: `rating`,
 };
+
+export const ESC_KEYCODE = 27;

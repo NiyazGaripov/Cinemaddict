@@ -5,12 +5,18 @@ import {ESC_KEYCODE} from './../constants.js';
 
 export class FilmController {
   constructor(container) {
-    this.container = container;
+    this._container = container;
     this._filmCardComponent = null;
     this._filmInfoComponent = null;
   }
 
   render(film) {
+    this._filmCardComponent = new FilmCard(film);
+    this._filmInfoComponent = new FilmInfo(film);
 
+    this._filmCardComponent.setClickHandler(this._showFilmDetails);
+    this._filmInfoComponent.setClickHandler(this._hideFilmDetails);
+
+    renderComponent(this._container, this._filmCardComponent);
   }
 }

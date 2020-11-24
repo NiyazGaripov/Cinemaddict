@@ -19,4 +19,10 @@ export class FilmController {
 
     renderComponent(this._container, this._filmCardComponent);
   }
+
+  _showFilmDetails() {
+    body.classList.add(`hide-overflow`);
+    body.appendChild(this._filmInfoComponent.getElement());
+    document.addEventListener(`keydown`, this._escKeyDownHandler);
+  }
 }

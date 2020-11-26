@@ -8,6 +8,7 @@ export class FilmController {
     this._container = container;
     this._filmCardComponent = null;
     this._filmInfoComponent = null;
+    this._escKeyDownHandler = this._escKeyDownHandler.bind(this);
   }
 
   render(film) {
@@ -30,5 +31,12 @@ export class FilmController {
     body.classList.remove(`hide-overflow`);
     body.removeChild(this._filmInfoComponent.getElement());
     document.removeEventListener(`keydown`, this._escKeyDownHandler);
+  }
+
+  _escKeyDownHandler(evt) {
+    if (evt.keyCode === ESC_KEYCODE) {
+      this._hideFilmDetails();
+      document.removeEventListener(`keydown`, this._escKeyDownHandler);
+    }
   }
 }

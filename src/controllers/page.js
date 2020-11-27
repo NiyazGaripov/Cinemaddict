@@ -58,17 +58,6 @@ export class PageController {
 
     renderFilmCards(films.slice(BEGIN_INDEX, showingFilmCards), filmsListContainer);
     renderShowMoreButton();
-
-    this._sortComponent.setSortTypeChangeHandler((sortType) => {
-      showingFilmCards += FILM_CARDS_AMOUNT_LOAD_MORE;
-
-      const sortedFilms = sortFilms(films, sortType, BEGIN_INDEX, showingFilmCards);
-
-      filmsListContainer.innerHTML = ``;
-
-      renderFilmCards(sortedFilms, filmsListContainer);
-      renderShowMoreButton();
-    });
   }
 
   renderFilmsExtra(films, className) {
@@ -97,5 +86,16 @@ export class PageController {
         removeComponent(this._showMoreButton);
       }
     });
+  }
+
+  _sortTypeChangeHandler(sortType) {
+    showingFilmCards = FILM_CARDS_AMOUNT_ON_START;
+
+    const sortedFilms = sortFilms(films, sortType, BEGIN_INDEX, showingFilmCards);
+
+    filmsListContainer.innerHTML = ``;
+
+    renderFilmCards(sortedFilms, filmsListContainer);
+    renderShowMoreButton();
   }
 }

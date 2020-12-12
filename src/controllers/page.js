@@ -3,17 +3,21 @@ import {removeComponent, renderComponent} from '../utils/render';
 import {NoData} from '../components/no-data';
 import {Sort} from './../components/sort.js';
 import {ShowMoreButton} from '../components/show-more-button';
+import {FilmController} from './../controllers/film.js';
 
 const FILM_CARDS_AMOUNT_ON_START = 5;
 const FILM_CARDS_AMOUNT_LOAD_MORE = 5;
 const BEGIN_INDEX = 0;
 
-const renderFilmCards = (cards, container) => {
-  cards.forEach((card) => {
-    renderFilmCard(container, card);
+const renderFilmCards = (filmCards, container) => {
+  return filmCards.map((filmCard) => {
+    const filmController = new FilmController(container);
+
+    filmController.render(filmCard);
+
+    return filmController;
   });
 };
-
 const sortFilms = (films, sortType, from, to) => {
   let sortedFilms = [];
   const showingFilms = films.slice();

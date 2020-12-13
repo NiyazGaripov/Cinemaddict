@@ -18,6 +18,16 @@ const renderFilmCards = (filmCards, container) => {
     return filmController;
   });
 };
+
+const renderFilmsList = (container, component, films) => {
+  renderComponent(container, component);
+
+  const listContainer = component.getListContainer();
+  listContainer.innerHTML = ``;
+
+  return renderFilmCards(films, listContainer);
+};
+
 const sortFilms = (films, sortType, from, to) => {
   let sortedFilms = [];
   const showingFilms = films.slice();

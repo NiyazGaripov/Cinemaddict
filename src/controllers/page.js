@@ -53,6 +53,11 @@ const sortFilms = (films, sortType, from, to) => {
 export class PageController {
   constructor(container) {
     this._container = container;
+    this._films = [];
+    this._showingFilmCards = FILM_CARDS_AMOUNT_ON_START;
+    this._filmsListComponent = new FilmList(FilmSection.all);
+    this._filmsListTopRatedComponent = new FilmList(FilmSection.rating);
+    this._filmsListMostCommentedComponent = new FilmList(FilmSection.comment);
     this._noData = new NoData();
     this._sortComponent = new Sort();
     this._showMoreButton = new ShowMoreButton();

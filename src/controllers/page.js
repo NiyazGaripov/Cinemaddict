@@ -54,6 +54,7 @@ export class PageController {
   constructor(container) {
     this._container = container;
     this._films = [];
+    this._showedFilmControllers = [];
     this._showingFilmCards = FILM_CARDS_AMOUNT_ON_START;
     this._filmsListComponent = new FilmList(FilmSection.all);
     this._filmsListTopRatedComponent = new FilmList(FilmSection.rating);
@@ -77,14 +78,10 @@ export class PageController {
       renderComponent(container, this._noData);
     }
 
-    renderComponent(container, this._filmsListComponent);
-    renderComponent(container, this._filmsListTopRatedComponent);
-    renderComponent(container, this._filmsListMostCommentedComponent);
-
-    renderFilmCards(this._films.slice(BEGIN_INDEX, this._showingFilmCards), this._filmsListComponent.getListContainer());
+    renderFilmsList(container, this._filmsListComponent, this._films.slice(BEGIN_INDEX, this._showingFilmCards));
     this._renderShowMoreButton();
-    renderFilmCards(this._films.slice().sort((a, b) => b.rating - a.rating).slice(BEGIN_INDEX, FILM_RATED_CARDS_AMOUNT), this._filmsListTopRatedComponent.getListContainer());
-    renderFilmCards(this._films.slice().sort((a, b) => b.comments.length - a.comments.length).slice(BEGIN_INDEX, FILM_COMMENTED_CARDS_AMOUNT), this._filmsListMostCommentedComponent.getListContainer());
+    renderFilmsList(container, this._filmsListTopRatedComponent, this._films.slice().sort((a, b) => b.rating - a.rating).slice(BEGIN_INDEX, FILM_RATED_CARDS_AMOUNT));
+    renderFilmsList(container, this._filmsListMostCommentedComponent, this._films.slice().sort((a, b) => b.comments.length - a.comments.length).slice(BEGIN_INDEX, FILM_COMMENTED_CARDS_AMOUNT));
   }
 
   _sortTypeChangeHandler(sortType) {

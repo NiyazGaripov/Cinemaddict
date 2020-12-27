@@ -89,7 +89,7 @@ export class PageController {
 
     this._renderShowMoreButton();
 
-    const isTopRatedFilms = this._films.every((it) => it.rating > 0);
+    const isTopRatedFilms = this._films.some((it) => it.rating > 0);
 
     if (isTopRatedFilms) {
       const ratedFilms = sortFilms(this._films, SortType.RATING, BEGIN_INDEX, FILM_RATED_CARDS_AMOUNT);

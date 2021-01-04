@@ -16,7 +16,7 @@ export class FilmController {
     this._filmInfoComponent = new FilmInfo(film);
 
     this._filmCardComponent.setClickHandler(this._showFilmDetails);
-    this._filmInfoComponent.setClickHandler(this._hideFilmDetails);
+    this._filmInfoComponent.setCloseButtonClickHandler(this._hideFilmDetails);
 
     renderComponent(this._container, this._filmCardComponent);
   }

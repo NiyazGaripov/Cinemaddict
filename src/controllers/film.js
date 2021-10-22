@@ -19,6 +19,24 @@ export class FilmController {
     this._filmCardComponent.setClickHandler(this._showFilmDetails);
     this._filmInfoComponent.setCloseButtonClickHandler(this._hideFilmDetails);
 
+    this._filmCardComponent.setWatchListButtonClickHandler(() => {
+      this._onDataChange(this, film, Object.assign({}, film, {
+        isWatchList: !film.isWatchList,
+      }));
+    });
+
+    this._filmCardComponent.setWatchedButtonClickHandler(() => {
+      this._onDataChange(this, film, Object.assign({}, film, {
+        isWatched: !film.isWatched,
+      }));
+    });
+
+    this._filmCardComponent.setFavoriteButtonClickHandler(() => {
+      this._onDataChange(this, film, Object.assign({}, film, {
+        isFavorite: !film.isFavorite,
+      }));
+    });
+
     renderComponent(this._container, this._filmCardComponent);
   }
 

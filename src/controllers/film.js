@@ -31,10 +31,9 @@ export class FilmController {
       this._addFilmToWatched();
     });
 
-    this._filmCardComponent.setFavoriteButtonClickHandler(() => {
-      this._onDataChange(this, film, Object.assign({}, film, {
-        isFavorite: !film.isFavorite,
-      }));
+    this._filmCardComponent.setFavoriteButtonClickHandler((evt) => {
+      evt.preventDefault();
+      this._addFilmToFavorite();
     });
 
     renderComponent(this._container, this._filmCardComponent);
@@ -68,6 +67,12 @@ export class FilmController {
   _addFilmToWatched() {
     this._onDataChange(this._film, Object.assign({}, this._film, {
       isWatched: !this._film.isWatched,
+    }));
+  }
+
+  _addFilmToFavorite() {
+    this._onDataChange(this._film, Object.assign({}, this._film, {
+      isFavorite: !this._film.isFavorite,
     }));
   }
 }

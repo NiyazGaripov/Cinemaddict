@@ -6,6 +6,7 @@ import {ESC_KEYCODE} from './../constants.js';
 export class FilmController {
   constructor(container, onDataChange) {
     this._container = container;
+    this._film = null;
     this._filmCardComponent = null;
     this._filmInfoComponent = null;
     this._escKeyDownHandler = this._escKeyDownHandler.bind(this);
@@ -13,16 +14,16 @@ export class FilmController {
   }
 
   render(film) {
+    this._film = film;
     this._filmCardComponent = new FilmCard(film);
     this._filmInfoComponent = new FilmInfo(film);
 
     this._filmCardComponent.setClickHandler(this._showFilmDetails);
     this._filmInfoComponent.setCloseButtonClickHandler(this._hideFilmDetails);
 
-    this._filmCardComponent.setWatchListButtonClickHandler(() => {
-      this._onDataChange(this, film, Object.assign({}, film, {
-        isWatchList: !film.isWatchList,
-      }));
+    this._filmCardComponent.setWatchListButtonClickHandler((evt) => {
+      evt.preventDefault();
+      this._addFilmToWatchList();
     });
 
     this._filmCardComponent.setWatchedButtonClickHandler(() => {
@@ -57,5 +58,11 @@ export class FilmController {
       this._hideFilmDetails();
       document.removeEventListener(`keydown`, this._escKeyDownHandler);
     }
+  }
+
+  _addFilmToWatchList() {
+    this._onDataChange(this._film, Object.assign({}, this._film, {
+      isWatchList: !this._film.isWatchList,
+    }));
   }
 }

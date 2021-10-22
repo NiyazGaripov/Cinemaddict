@@ -26,10 +26,9 @@ export class FilmController {
       this._addFilmToWatchList();
     });
 
-    this._filmCardComponent.setWatchedButtonClickHandler(() => {
-      this._onDataChange(this, film, Object.assign({}, film, {
-        isWatched: !film.isWatched,
-      }));
+    this._filmCardComponent.setWatchedButtonClickHandler((evt) => {
+      evt.preventDefault();
+      this._addFilmToWatched();
     });
 
     this._filmCardComponent.setFavoriteButtonClickHandler(() => {
@@ -63,6 +62,12 @@ export class FilmController {
   _addFilmToWatchList() {
     this._onDataChange(this._film, Object.assign({}, this._film, {
       isWatchList: !this._film.isWatchList,
+    }));
+  }
+
+  _addFilmToWatched() {
+    this._onDataChange(this._film, Object.assign({}, this._film, {
+      isWatched: !this._film.isWatched,
     }));
   }
 }

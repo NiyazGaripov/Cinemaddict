@@ -4,11 +4,12 @@ import {FilmInfo} from './../components/film-details.js';
 import {ESC_KEYCODE} from './../constants.js';
 
 export class FilmController {
-  constructor(container) {
+  constructor(container, onDataChange) {
     this._container = container;
     this._filmCardComponent = null;
     this._filmInfoComponent = null;
     this._escKeyDownHandler = this._escKeyDownHandler.bind(this);
+    this._onDataChange = onDataChange;
   }
 
   render(film) {

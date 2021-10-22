@@ -142,8 +142,9 @@ export class PageController {
     });
   }
 
-  _onDataChange(filmController, oldData, newData) {
+  _onDataChange(oldData, newData) {
     const index = this._films.findIndex((it) => it === oldData);
+    const allFilms = [...this._showedFilmControllers, ...this._topRatedFilmControllers, ...this._mostCommentedFilmControllers];
 
     if (index === -1) {
       return;
@@ -151,6 +152,12 @@ export class PageController {
 
     this._films = [].concat(this._films.slice(0, index), newData, this._films.slice(index + 1));
 
-    filmController.render(this._films[index]);
+    allFilms.forEach((film) => {
+      const currentFilm = film._filmCardComponent._filmCard;
+
+      if (currentFilm === oldData) {
+        film.render(newData);
+      }
+    });
   }
 }

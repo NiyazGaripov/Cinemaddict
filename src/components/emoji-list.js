@@ -1,5 +1,5 @@
 import {EMOJIS} from './../constants.js';
-import {AbstractComponent} from "./abstract-component";
+import {AbstractComponent} from './abstract-component';
 
 const createEmojiListComponent = (currentEmoji) => EMOJIS.map((emoji) => {
   const checked = emoji === currentEmoji ? `checked` : ``;

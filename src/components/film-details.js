@@ -1,6 +1,6 @@
 import {MONTH_NAMES} from './../constants.js';
 import {Comment} from './comments.js';
-import {AbstractComponent} from "./abstract-component";
+import {AbstractSmartComponent} from "./abstract-smart-component";
 
 const createGenresMarkup = (genres) => {
   return genres.map((genre) => {
@@ -124,7 +124,7 @@ const createFilmDetailsComponent = (film) => {
   );
 };
 
-export class FilmInfo extends AbstractComponent {
+export class FilmInfo extends AbstractSmartComponent {
   constructor(film) {
     super();
     this._film = film;

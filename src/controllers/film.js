@@ -3,9 +3,16 @@ import {FilmCard} from './../components/film-card.js';
 import {FilmInfo} from './../components/film-details.js';
 import {ESC_KEYCODE} from './../constants.js';
 
+const body = document.body;
+const Mode = {
+  DEFAULT: `default`,
+  MODAL: `modal`,
+};
+
 export class FilmController {
   constructor(container, onDataChange, onViewChange) {
     this._container = container;
+    this._mode = Mode.DEFAULT;
     this._film = null;
     this._filmCardComponent = null;
     this._filmInfoComponent = null;

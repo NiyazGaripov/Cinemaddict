@@ -1,4 +1,5 @@
 import {EMOJIS} from './../constants.js';
+import {AbstractComponent} from "./abstract-component";
 
 const createEmojiListComponent = (currentEmoji) => EMOJIS.map((emoji) => {
   return (
@@ -8,3 +9,14 @@ const createEmojiListComponent = (currentEmoji) => EMOJIS.map((emoji) => {
     </label>`
   );
 });
+
+export class Emoji extends AbstractComponent {
+  constructor(currentEmoji) {
+    super();
+    this._currentEmoji = currentEmoji;
+  }
+
+  getTemplate() {
+    return createEmojiListComponent(this._currentEmoji);
+  }
+}

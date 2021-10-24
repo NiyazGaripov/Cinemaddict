@@ -110,6 +110,8 @@ export class FilmController {
   }
 
   setDefaultView() {
-    this._hideFilmDetails();
+    if (this._mode !== Mode.DEFAULT) {
+      this._hideFilmDetails();
+    }
   }
 }

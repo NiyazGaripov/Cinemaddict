@@ -44,7 +44,7 @@ const sortFilms = (films, sortType, from, to) => {
       sortedFilms = showingFilms.sort((a, b) => b.release - a.release);
       break;
     case SortType.COMMENTS:
-      sortedFilms = showingFilms.sort((a, b) => b.comment.length - a.comment.length);
+      sortedFilms = showingFilms.sort((a, b) => b.comments.length - a.comments.length);
       break;
     case SortType.DEFAULT:
       sortedFilms = showingFilms;

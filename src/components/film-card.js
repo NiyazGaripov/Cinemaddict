@@ -1,12 +1,12 @@
 import {CHARACTER_LIMIT} from './../constants.js';
-import {getRandomArrayItem} from './../utils/common.js';
+import {getFullYear, getRandomArrayItem} from './../utils/common.js';
 import {getShortDescription} from './../utils/text.js';
 import {AbstractComponent} from "./abstract-component";
 
 const createFilmCardComponent = (filmCard) => {
   const {poster, title, rating, release, duration, genres, description, comments, isWatchList, isWatched, isFavorite} = filmCard;
   const genre = getRandomArrayItem(genres);
-  const releaseYear = release.getFullYear();
+  const releaseYear = getFullYear(release);
   const commentsAmount = comments.length;
   const shortDescription = getShortDescription(description, CHARACTER_LIMIT);
   const watchListActiveClass = isWatchList ? `film-card__controls-item--active` : ``;

@@ -1,4 +1,4 @@
-import {NAVIGATION_ITEM_NAMES} from './../constants.js';
+import {NAVIGATION_ITEM_NAMES} from '../constants';
 
 export const generateNavigationList = () => {
   const FIRST_ELEMENT = 0;

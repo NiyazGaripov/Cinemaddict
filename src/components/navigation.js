@@ -1,4 +1,4 @@
-import {AbstractComponent} from "./abstract-component";
+import {AbstractComponent} from './abstract-component';
 
 const createNavigationItemComponent = (item, isActive, hasCount) => {
   const {path, title, amount} = item;

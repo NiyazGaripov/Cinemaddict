@@ -1,5 +1,5 @@
-import {getRandomArrayItem} from './../utils/common.js';
-import {GENRES} from './../constants.js';
+import {getRandomArrayItem} from '../utils/common';
+import {GENRES} from '../constants';
 
 const generateGenre = () => {
   return {

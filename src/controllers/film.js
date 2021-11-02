@@ -1,7 +1,7 @@
-import {renderComponent, replaceComponent} from './../utils/render.js';
-import {FilmCard} from './../components/film-card.js';
-import {FilmInfo} from './../components/film-details.js';
-import {ESC_KEYCODE} from './../constants.js';
+import {renderComponent, replaceComponent} from '../utils/render';
+import {FilmCard} from '../components/film-card';
+import {FilmInfo} from '../components/film-details';
+import {ESC_KEYCODE} from '../constants';
 
 const body = document.body;
 const Mode = {

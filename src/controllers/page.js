@@ -1,10 +1,10 @@
-import {FilmSection, SortType} from './../constants';
+import {FilmSection, SortType} from '../constants';
 import {removeComponent, renderComponent} from '../utils/render';
 import {NoData} from '../components/no-data';
-import {Sort} from './../components/sort.js';
+import {Sort} from '../components/sort';
 import {ShowMoreButton} from '../components/show-more-button';
-import {FilmController} from './../controllers/film.js';
-import {FilmList} from './../components/film-list.js';
+import {FilmController} from './film';
+import {FilmList} from '../components/film-list';
 
 const FILM_CARDS_AMOUNT_ON_START = 5;
 const FILM_CARDS_AMOUNT_LOAD_MORE = 5;

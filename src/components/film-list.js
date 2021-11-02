@@ -1,4 +1,4 @@
-import {AbstractComponent} from "./abstract-component";
+import {AbstractComponent} from './abstract-component';
 
 const createFilmListComponent = (list) => {
   const {section, title} = list;

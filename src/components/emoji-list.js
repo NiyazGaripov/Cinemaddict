@@ -1,4 +1,4 @@
-import {EMOJIS} from './../constants.js';
+import {EMOJIS} from '../constants';
 import {AbstractComponent} from './abstract-component';
 
 const createEmojiListComponent = (currentEmoji) => EMOJIS.map((emoji) => {

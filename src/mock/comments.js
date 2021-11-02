@@ -1,5 +1,6 @@
-import {TEXT_COMMENTS, EMOJIS, COMMENT_AUTHORS} from './../constants.js';
-import {getRandomArrayItem, getRandomDate} from './../utils/common.js';
+import {TEXT_COMMENTS, EMOJIS, COMMENT_AUTHORS} from '../constants';
+import {getRandomArrayItem} from '../utils/common';
+import {getRandomDate} from '../utils/date';
 
 const generateComment = () => {
   return {

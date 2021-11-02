@@ -1,7 +1,8 @@
-import {CHARACTER_LIMIT} from './../constants.js';
-import {getFullYear, getRandomArrayItem} from './../utils/common.js';
-import {getShortDescription} from './../utils/text.js';
-import {AbstractComponent} from "./abstract-component";
+import {CHARACTER_LIMIT} from '../constants';
+import {getRandomArrayItem} from '../utils/common';
+import {getShortDescription} from '../utils/text';
+import {AbstractComponent} from './abstract-component';
+import {getFullYear} from '../utils/date';
 
 const createFilmCardComponent = (filmCard) => {
   const {poster, title, rating, release, duration, genres, description, comments, isWatchList, isWatched, isFavorite} = filmCard;

@@ -1,8 +1,9 @@
-import {POSTERS, FILM_TITLES, DURATIONS, DESCRIPTION_FILMS, AGES, DIRECTORS, WRITERS, ACTORS, COUNTRIES} from './../constants.js';
-import {getRandomIntegerNumber, getRandomArrayItem, getRandomDate} from './../utils/common.js';
-import {generateDescription} from './../utils/text.js';
+import {POSTERS, FILM_TITLES, DURATIONS, DESCRIPTION_FILMS, AGES, DIRECTORS, WRITERS, ACTORS, COUNTRIES} from '../constants';
+import {getRandomIntegerNumber, getRandomArrayItem} from '../utils/common';
+import {generateDescription} from '../utils/text';
 import {generateComments} from './comments.js';
 import {generateGenres} from './genres.js';
+import {getRandomDate} from "../utils/date";
 
 const MIN_RATING = 0;
 const MAX_RATING = 9;

@@ -1,4 +1,4 @@
-import {MONTH_NAMES} from './../constants.js';
+import {MONTH_NAMES} from '../constants';
 import {Comment} from './comments.js';
 import {AbstractSmartComponent} from './abstract-smart-component';
 import {Emoji} from './emoji-list';

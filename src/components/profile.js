@@ -1,6 +1,6 @@
-import {PROFILES} from './../constants.js';
-import {getRandomArrayItem} from './../utils/common.js';
-import {AbstractComponent} from "./abstract-component";
+import {PROFILES} from '../constants';
+import {getRandomArrayItem} from '../utils/common';
+import {AbstractComponent} from './abstract-component';
 
 const createProfileComponent = () => {
   const userRank = getRandomArrayItem(PROFILES);

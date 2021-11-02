@@ -62,16 +62,6 @@ export const DESCRIPTION_FILMS = [
   `In rutrum ac purus sit amet tempus.`,
 ];
 
-export const DURATIONS = [
-  `1h 55m`,
-  `54m`,
-  `1h 59m`,
-  `1h 21m`,
-  `16m`,
-  `1h 18m`,
-  `1h 32m`,
-];
-
 export const PROFILES = [
   `Novice`,
   `Fan`,

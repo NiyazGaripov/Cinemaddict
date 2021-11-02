@@ -24,3 +24,18 @@ export const formatReleaseDate = (date) => {
 export const formatCommentDate = (date) => {
   return dayjs(date).format(`YYYY/MM/DD HH:mm`);
 };
+
+export const getFilmDuration = (duration) => {
+  const filmDuration = dayjs.duration(duration, `minutes`);
+  let hours = filmDuration.hours();
+  let minutes = filmDuration.minutes();
+
+  hours = hours > 0 ? `${hours}h` : ``;
+  minutes = minutes > 0 ? `${minutes}m` : ``;
+
+  if (hours && minutes) {
+    hours += ` `;
+  }
+
+  return hours + minutes;
+};

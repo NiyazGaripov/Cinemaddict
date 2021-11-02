@@ -20,3 +20,7 @@ export const getFullYear = (date) => {
 export const formatReleaseDate = (date) => {
   return dayjs(date).format(`DD MMMM YYYY`);
 };
+
+export const formatCommentDate = (date) => {
+  return dayjs(date).format(`YYYY/MM/DD HH:mm`);
+};

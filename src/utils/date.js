@@ -17,6 +17,6 @@ export const getFullYear = (date) => {
   return dayjs(date).format(`YYYY`);
 };
 
-export const formatDate = (date) => {
+export const formatReleaseDate = (date) => {
   return dayjs(date).format(`DD MMMM YYYY`);
 };

@@ -1,7 +1,7 @@
 import {Comment} from './comments.js';
 import {AbstractSmartComponent} from './abstract-smart-component';
 import {Emoji} from './emoji-list';
-import {formatDate} from "../utils/date";
+import {formatReleaseDate} from "../utils/date";
 
 const createGenresMarkup = (genres) => {
   return genres.map((genre) => {
@@ -20,7 +20,7 @@ const createImageMarkup = (emoji) => {
 
 const createFilmDetailsComponent = (film, emoji) => {
   const {poster, title, rating, release, duration, genres, description, age, director, writers, actors, country, comments, isWatchList, isWatched, isFavorite} = film;
-  const releaseDate = formatDate(release);
+  const releaseDate = formatReleaseDate(release);
   const createGenres = createGenresMarkup(genres);
   const commentsAmount = comments.length;
   const commentList = new Comment(comments).getTemplate();

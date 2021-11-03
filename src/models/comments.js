@@ -34,4 +34,8 @@ export class Comments {
   setDataChangeHandler(handler) {
     this._dataChangeHandlers.push(handler);
   }
+
+  _callHandlers(handlers) {
+    handlers.forEach((handler) => handler());
+  }
 }

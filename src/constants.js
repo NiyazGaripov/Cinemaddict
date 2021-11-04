@@ -75,6 +75,13 @@ export const FILTER_NAMES = [
   `Favorites`,
 ];
 
+export const FilterType = {
+  ALL: `all`,
+  WATCHLIST: `watchlist`,
+  HISTORY: `history`,
+  FAVORITES: `favorites`,
+};
+
 export const SORT_ITEM_NAMES = [
   `default`,
   `date`,

@@ -1,6 +1,6 @@
 import {AbstractComponent} from './abstract-component';
 
-const createNavigationItemComponent = (item, isActive, hasCount) => {
+const createFilterItemComponent = (item, isActive, hasCount) => {
   const {path, title, amount} = item;
   const activeClass = isActive ? `main-navigation__item--active` : ``;
 
@@ -12,26 +12,26 @@ const createNavigationItemComponent = (item, isActive, hasCount) => {
   );
 };
 
-const createNavigationComponent = (list) => {
-  const createNavigationList = list.map((it, i) => createNavigationItemComponent(it, i === 0, i !== 0)).join(`\n`);
+const createFilterComponent = (list) => {
+  const createFilterList = list.map((it, i) => createFilterItemComponent(it, i === 0, i !== 0)).join(`\n`);
 
   return (
     `<nav class="main-navigation">
       <div class="main-navigation__items">
-        ${createNavigationList}
+        ${createFilterList}
       </div>
       <a href="#stats" class="main-navigation__additional">Stats</a>
     </nav>`
   );
 };
 
-export class Navigation extends AbstractComponent {
+export class Filter extends AbstractComponent {
   constructor(list) {
     super();
     this._list = list;
   }
 
   getTemplate() {
-    return createNavigationComponent(this._list);
+    return createFilterComponent(this._list);
   }
 }

@@ -68,7 +68,7 @@ export const PROFILES = [
   `Movie Buff`,
 ];
 
-export const NAVIGATION_ITEM_NAMES = [
+export const FILTER_NAMES = [
   `All movies`,
   `Watchlist`,
   `History`,

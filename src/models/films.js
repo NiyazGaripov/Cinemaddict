@@ -1,7 +1,11 @@
+import {FilterType} from '../constants';
+
 export class Films {
   constructor() {
     this._films = [];
+    this._activeFilterType = FilterType.ALL;
     this._dataChangeHandlers = [];
+    this._filterChangeHandlers = [];
   }
 
   getFilms() {

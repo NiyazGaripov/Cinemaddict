@@ -19,5 +19,13 @@ export class CommentController {
 
     renderComponent(this._container, this._commentsComponent);
     renderComponent(this._container, this._newComment);
+
+    this._commentsComponent.deleteButtonClickHandler(this._onDeleteButtonClick);
+  }
+
+  _onDeleteButtonClick(evt) {
+    evt.preventDefault();
+
+    this._onDataChange(this._commentsComponent._comments, null);
   }
 }

@@ -1,4 +1,5 @@
 import {AbstractComponent} from './abstract-component';
+import {setActiveClass} from '../utils/common';
 
 const BEGIN_INDEX = 1;
 
@@ -54,12 +55,7 @@ export class Filter extends AbstractComponent {
         const container = this.getElement();
         const activeClass = `main-navigation__item--active`;
 
-        const activeElement = container.querySelector(`.${activeClass}`);
-
-        if (!evt.target.classList.contains(`${activeClass}`)) {
-          activeElement.classList.remove(activeClass);
-          evt.target.classList.add(activeClass);
-        }
+        setActiveClass(container, evt.target, activeClass);
 
         handler(filterTitle);
       });

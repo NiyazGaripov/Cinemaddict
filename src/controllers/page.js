@@ -170,4 +170,10 @@ export class PageController {
     this._showedFilmControllers.forEach((filmController) => filmController.destroy());
     this._showedFilmControllers = [];
   }
+
+  _updateFilms(amount) {
+    this._removeFilms();
+    this._renderFilms(this._filmsModel.getFilms().slice(0, amount));
+    this._renderShowMoreButton();
+  }
 }

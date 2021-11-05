@@ -33,7 +33,7 @@ export class FilterController {
     const oldComponent = this._filterComponent;
 
     this._filterComponent = new Filter(filters);
-    this._filterComponent.setFilterClickHandler(this._onFilterChange);
+    this._filterComponent.setFilterChangeHandler(this._onFilterChange);
 
     if (oldComponent) {
       replaceComponent(this._filterComponent, oldComponent);

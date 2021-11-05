@@ -2,6 +2,7 @@ import {removeComponent, renderComponent, replaceComponent} from '../utils/rende
 import {FilmCard} from '../components/film-card';
 import {FilmInfo} from '../components/film-details';
 import {ESC_KEYCODE} from '../constants';
+import {Comments} from '../components/comments';
 
 const body = document.body;
 const Mode = {
@@ -16,9 +17,12 @@ export class FilmController {
     this._film = null;
     this._filmCardComponent = null;
     this._filmInfoComponent = null;
+    this._commentsController = null;
+    this._commentsModel = new Comments();
     this._escKeyDownHandler = this._escKeyDownHandler.bind(this);
     this._onDataChange = onDataChange;
     this._onViewChange = onViewChange;
+    this._onCommentDataChange = this._onCommentDataChange.bind(this);
   }
 
   render(film) {
@@ -27,6 +31,11 @@ export class FilmController {
     this._film = film;
     this._filmCardComponent = new FilmCard(film);
     this._filmInfoComponent = new FilmInfo(film);
+
+    this._commentsModel.setComments(film.comments);
+
+    this._commentsController = new CommentController(this._filmInfoComponent.getCommentsWrap(), this._commentsModel, this._onCommentDataChange);
+    this._commentsController.render();
 
     this._filmCardComponent.setClickHandler(() => {
       this._showFilmDetails();
@@ -71,6 +80,18 @@ export class FilmController {
     }
   }
 
+  setDefaultView() {
+    if (this._mode !== Mode.DEFAULT) {
+      this._hideFilmDetails();
+    }
+  }
+
+  destroy() {
+    removeComponent(this._filmCardComponent);
+    removeComponent(this._filmInfoComponent);
+    document.removeEventListener(`keydown`, this._escKeyDownHandler);
+  }
+
   _showFilmDetails() {
     this._onViewChange();
     body.classList.add(`hide-overflow`);
@@ -109,15 +130,13 @@ export class FilmController {
     }));
   }
 
-  setDefaultView() {
-    if (this._mode !== Mode.DEFAULT) {
-      this._hideFilmDetails();
+  _onCommentDataChange(oldData, newData) {
+    if (oldData === null) {
+      this._commentsModel.addComment(newData);
     }
-  }
 
-  destroy() {
-    removeComponent(this._filmCardComponent);
-    removeComponent(this._filmInfoComponent);
-    document.removeEventListener(`keydown`, this._escKeyDownHandler);
+    if (newData === null) {
+      this._commentsModel.removeComment(oldData.id);
+    }
   }
 }

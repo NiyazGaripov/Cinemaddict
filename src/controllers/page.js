@@ -165,4 +165,9 @@ export class PageController {
 
     allInstances.forEach((instance) => instance.setDefaultView());
   }
+
+  _removeFilms() {
+    this._showedFilmControllers.forEach((filmController) => filmController.destroy());
+    this._showedFilmControllers = [];
+  }
 }

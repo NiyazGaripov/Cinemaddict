@@ -16,3 +16,7 @@ export const getFilmsByFilter = (films, filterType) => {
 const getWatchListFilms = (films) => {
   return films.filter((film) => film.isWatchList);
 };
+
+const getWatchedFilms = (films) => {
+  return films.filter((film) => film.isWatched);
+};

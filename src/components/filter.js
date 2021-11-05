@@ -1,9 +1,10 @@
 import {AbstractComponent} from './abstract-component';
 
-const BEGIN_SLICE = 1;
+const BEGIN_INDEX = 1;
 
 const getFilterTitleByHref = (href) => {
-  return href.slice(BEGIN_SLICE);
+  const index = href.indexOf(`#`) + BEGIN_INDEX;
+  return href.slice(index);
 };
 
 const createFilterItemComponent = (filter) => {

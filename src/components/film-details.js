@@ -11,7 +11,7 @@ const createGenresMarkup = (genres) => {
 };
 
 const createFilmDetailsComponent = (film) => {
-  const {poster, title, rating, release, duration, genres, description, age, director, writers, actors, country, comments, isWatchList, isWatched, isFavorite} = film;
+  const {poster, title, rating, release, duration, genres, description, age, director, writers, actors, country, isWatchList, isWatched, isFavorite} = film;
   const releaseDate = formatReleaseDate(release);
   const createGenres = createGenresMarkup(genres);
 
@@ -84,6 +84,8 @@ const createFilmDetailsComponent = (film) => {
             <label for="favorite" class="film-details__control-label film-details__control-label--favorite">Add to favorites</label>
           </section>
         </div>
+
+         <div class="form-details__bottom-container"></div>
       </form>
     </section>`
   );

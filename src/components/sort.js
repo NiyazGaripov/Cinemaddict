@@ -39,24 +39,18 @@ export class Sort extends AbstractComponent {
     this.getElement().addEventListener(`click`, (evt) => {
       evt.preventDefault();
 
-      const sortType = evt.target.dataset.sortType;
-      const sortContainer = evt.target.closest(`.sort`);
-      const activeClass = `sort__button--active`;
-      const activeElement = sortContainer.querySelector(`.${activeClass}`);
-
       if (evt.target.tagName !== `A`) {
         return;
       }
 
-      activeElement.classList.remove(activeClass);
-      evt.target.classList.add(activeClass);
+      const sortType = evt.target.dataset.sortType;
 
       if (this._currentSortType === sortType) {
         return;
       }
 
       this._currentSortType = sortType;
-
+      this._setActiveElement(this._currentSortType);
       callback(this._currentSortType);
     });
   }

@@ -11,6 +11,14 @@ const Mode = {
   MODAL: `modal`,
 };
 
+const renderComments = (commentsContainer, comments, onCommentsDataChange) => {
+  const commentsController = new CommentsController(commentsContainer, onCommentsDataChange);
+
+  commentsController.render(comments);
+
+  return commentsController;
+};
+
 export class FilmController {
   constructor(container, onDataChange, onViewChange) {
     this._container = container;
@@ -23,54 +31,61 @@ export class FilmController {
     this._escKeyDownHandler = this._escKeyDownHandler.bind(this);
     this._onDataChange = onDataChange;
     this._onViewChange = onViewChange;
-    this._onCommentDataChange = this._onCommentDataChange.bind(this);
+    this._onCommentsDataChange = this._onCommentsDataChange.bind(this);
+    this._commentsModel.setCommentsDataChangeHandlers(this._onCommentsDataChange);
   }
 
   render(film) {
+    this._commentsModel.setComments(film.comments);
+    const comments = this._commentsModel.getComments();
+
     const oldFilmCardComponent = this._filmCardComponent;
     const oldFilmInfoComponent = this._filmInfoComponent;
     this._film = film;
-    this._filmCardComponent = new FilmCard(film);
+    this._filmCardComponent = new FilmCard(film, comments);
     this._filmInfoComponent = new FilmInfo(film);
-
-    this._commentsModel.setComments(film.comments);
-
-    this._commentsController = new CommentsController(this._filmInfoComponent.getCommentsWrap(), this._commentsModel, this._onCommentDataChange);
-    this._commentsController.render();
 
     this._filmCardComponent.setClickHandler(() => {
       this._showFilmDetails();
+      this._updateComments(comments);
     });
 
     this._filmInfoComponent.setCloseButtonClickHandler(() => {
       this._hideFilmDetails();
+      this._removeComments();
     });
 
     this._filmCardComponent.setWatchListButtonClickHandler((evt) => {
       evt.preventDefault();
       this._addFilmToWatchList();
+      this._updateComments(comments);
     });
 
     this._filmInfoComponent.setWatchListInputChangeHandler(() => {
       this._addFilmToWatchList();
+      this._updateComments(comments);
     });
 
     this._filmCardComponent.setWatchedButtonClickHandler((evt) => {
       evt.preventDefault();
       this._addFilmToWatched();
+      this._updateComments(comments);
     });
 
     this._filmInfoComponent.setWatchedInputChangeHandler(() => {
       this._addFilmToWatched();
+      this._updateComments(comments);
     });
 
     this._filmCardComponent.setFavoriteButtonClickHandler((evt) => {
       evt.preventDefault();
       this._addFilmToFavorite();
+      this._updateComments(comments);
     });
 
     this._filmInfoComponent.setFavoriteInputChangeHandler(() => {
       this._addFilmToFavorite();
+      this._updateComments(comments);
     });
 
     if (oldFilmCardComponent && oldFilmInfoComponent) {
@@ -109,6 +124,7 @@ export class FilmController {
   _escKeyDownHandler(evt) {
     if (evt.keyCode === ESC_KEYCODE) {
       this._hideFilmDetails();
+      this._removeComments();
       document.removeEventListener(`keydown`, this._escKeyDownHandler);
     }
   }
@@ -131,13 +147,33 @@ export class FilmController {
     }));
   }
 
-  _onCommentDataChange(oldData, newData) {
+  _onCommentsDataChange(oldData, newData) {
     if (oldData === null) {
       this._commentsModel.addComment(newData);
-    }
-
-    if (newData === null) {
+      this._updateComments(this._commentsModel.getComments());
+    } else if (newData === null) {
       this._commentsModel.removeComment(oldData.id);
+      this._updateComments(this._commentsModel.getComments());
     }
+  }
+
+  _updateComments(comments) {
+    this._removeComments();
+    this._renderComments(comments);
+  }
+
+  _renderComments(comments) {
+    const filmPopup = this._filmInfoComponent.getElement();
+    const commentsContainer = filmPopup.querySelector(`.form-details__bottom-container`);
+
+    this._commentsController = renderComments(commentsContainer, comments, this._onCommentsDataChange);
+  }
+
+  _removeComments() {
+    if (this._commentsController === null) {
+      return;
+    }
+    this._commentsController.destroy();
+    this._commentsController = null;
   }
 }

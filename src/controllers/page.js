@@ -171,6 +171,7 @@ export class PageController {
 
   _onFilterChange() {
     this._showingFilmCards = FILM_CARDS_AMOUNT_ON_START;
+    this._sortComponent.resetSortType();
     this._updateFilms(this._showingFilmCards);
   }
 

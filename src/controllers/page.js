@@ -183,4 +183,8 @@ export class PageController {
     this._renderFilms(this._filmsModel.getFilms().slice(0, amount));
     this._renderShowMoreButton();
   }
+
+  _onFilterChange() {
+    this._updateFilms(this._showingFilmCards);
+  }
 }

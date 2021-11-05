@@ -31,7 +31,7 @@ export class Comments {
     this._callHandlers(this._dataChangeHandlers);
   }
 
-  setDataChangeHandler(handler) {
+  setCommentsDataChangeHandlers(handler) {
     this._dataChangeHandlers.push(handler);
   }
 

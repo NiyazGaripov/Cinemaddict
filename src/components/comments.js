@@ -32,7 +32,7 @@ const createCommentsComponent = (comments) => {
   );
 };
 
-export class Comment extends AbstractComponent {
+export class Comments extends AbstractComponent {
   constructor(comments) {
     super();
     this._comments = comments;

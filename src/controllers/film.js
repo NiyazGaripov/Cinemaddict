@@ -1,4 +1,4 @@
-import {renderComponent, replaceComponent} from '../utils/render';
+import {removeComponent, renderComponent, replaceComponent} from '../utils/render';
 import {FilmCard} from '../components/film-card';
 import {FilmInfo} from '../components/film-details';
 import {ESC_KEYCODE} from '../constants';
@@ -113,5 +113,11 @@ export class FilmController {
     if (this._mode !== Mode.DEFAULT) {
       this._hideFilmDetails();
     }
+  }
+
+  destroy() {
+    removeComponent(this._filmCardComponent);
+    removeComponent(this._filmInfoComponent);
+    document.removeEventListener(`keydown`, this._escKeyDownHandler);
   }
 }

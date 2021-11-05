@@ -35,6 +35,11 @@ export class Films {
     return getFilmsByFilter(this._films, this._activeFilterType);
   }
 
+  setFilter(filterType) {
+    this._activeFilterType = filterType;
+    this._callHandlers(this._filterChangeHandlers);
+  }
+
   setDataChangeHandler(handler) {
     this._dataChangeHandlers.push(handler);
   }

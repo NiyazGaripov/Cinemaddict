@@ -3,6 +3,7 @@ import {FilmCard} from '../components/film-card';
 import {FilmInfo} from '../components/film-details';
 import {ESC_KEYCODE} from '../constants';
 import {Comments} from '../components/comments';
+import {CommentsController} from "./comments";
 
 const body = document.body;
 const Mode = {
@@ -34,7 +35,7 @@ export class FilmController {
 
     this._commentsModel.setComments(film.comments);
 
-    this._commentsController = new CommentController(this._filmInfoComponent.getCommentsWrap(), this._commentsModel, this._onCommentDataChange);
+    this._commentsController = new CommentsController(this._filmInfoComponent.getCommentsWrap(), this._commentsModel, this._onCommentDataChange);
     this._commentsController.render();
 
     this._filmCardComponent.setClickHandler(() => {

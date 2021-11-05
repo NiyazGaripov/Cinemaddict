@@ -1,5 +1,11 @@
 import {AbstractComponent} from './abstract-component';
 
+const BEGIN_SLICE = 1;
+
+const getFilterTitleByHref = (href) => {
+  return href.slice(BEGIN_SLICE);
+};
+
 const createFilterItemComponent = (filter) => {
   const {path, title, amount, isActive} = filter;
   const activeClass = isActive ? `main-navigation__item--active` : ``;

@@ -40,6 +40,10 @@ export class Films {
     this._callHandlers(this._filterChangeHandlers);
   }
 
+  resetFilter() {
+    this._activeFilterType = FilterType.ALL;
+  }
+
   setDataChangeHandler(handler) {
     this._dataChangeHandlers.push(handler);
   }

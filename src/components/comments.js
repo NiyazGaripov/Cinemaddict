@@ -41,4 +41,8 @@ export class Comment extends AbstractComponent {
   getTemplate() {
     return createCommentsComponent(this._comments);
   }
+
+  deleteButtonClickHandler(callback) {
+    this.getElement().querySelector(`.film-details__comment-delete`).addEventListener(`click`, callback);
+  }
 }

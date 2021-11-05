@@ -20,3 +20,7 @@ const getWatchListFilms = (films) => {
 const getWatchedFilms = (films) => {
   return films.filter((film) => film.isWatched);
 };
+
+const getFavoritesFilms = (films) => {
+  return films.filter((film) => film.isFavorite);
+};

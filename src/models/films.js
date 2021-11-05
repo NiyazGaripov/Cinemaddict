@@ -1,4 +1,5 @@
 import {FilterType} from '../constants';
+import {getFilmsByFilter} from '../utils/filter';
 
 export class Films {
   constructor() {
@@ -28,6 +29,10 @@ export class Films {
     this._callHandlers(this._dataChangeHandlers);
 
     return true;
+  }
+
+  getFilteredFilms() {
+    return getFilmsByFilter(this._films, this._activeFilterType);
   }
 
   setDataChangeHandler(handler) {

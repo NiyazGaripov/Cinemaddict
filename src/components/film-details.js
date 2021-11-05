@@ -14,7 +14,6 @@ const createFilmDetailsComponent = (film) => {
   const {poster, title, rating, release, duration, genres, description, age, director, writers, actors, country, comments, isWatchList, isWatched, isFavorite} = film;
   const releaseDate = formatReleaseDate(release);
   const createGenres = createGenresMarkup(genres);
-  const commentsAmount = comments.length;
 
   return (
     `<section class="film-details">
@@ -85,11 +84,6 @@ const createFilmDetailsComponent = (film) => {
             <label for="favorite" class="film-details__control-label film-details__control-label--favorite">Add to favorites</label>
           </section>
         </div>
-        <div class="form-details__bottom-container">
-          <section class="film-details__comments-wrap">
-            <h3 class="film-details__comments-title">Comments <span class="film-details__comments-count">${commentsAmount}</span></h3>
-          </section>
-        </div>
       </form>
     </section>`
   );
@@ -107,6 +101,14 @@ export class FilmInfo extends AbstractSmartComponent {
 
   getTemplate() {
     return createFilmDetailsComponent(this._film);
+  }
+
+  rerender() {
+    super.rerender();
+  }
+
+  reset() {
+    this.rerender();
   }
 
   setCloseButtonClickHandler(callback) {
@@ -137,6 +139,6 @@ export class FilmInfo extends AbstractSmartComponent {
   }
 
   getCommentsWrap() {
-    return this.getElement().querySelector(`.film-details__comments-wrap`);
+    return this.getElement().querySelector(`.film-details__inner`);
   }
 }

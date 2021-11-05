@@ -1,5 +1,6 @@
 import {AbstractComponent} from './abstract-component';
 import {SORT_ITEM_NAMES, SortType} from '../constants';
+import {setActiveClass} from '../utils/common';
 
 const createSortItemComponent = (type, isActive) => {
   const activeClass = isActive ? `sort__button--active` : ``;

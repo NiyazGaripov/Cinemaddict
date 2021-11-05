@@ -60,4 +60,9 @@ export class Sort extends AbstractComponent {
       callback(this._currentSortType);
     });
   }
+
+  resetSortType() {
+    this._currentSortType = SortType.DEFAULT;
+    this._setActiveElement(this._currentSortType);
+  }
 }

@@ -1,15 +1,22 @@
 import {AbstractComponent} from './abstract-component';
 
-const createFilmStatisticsComponent = () => {
+const createFilmStatisticsComponent = (films) => {
+  const filmsAmount = films.length;
+
   return (
     `<section class="footer__statistics">
-      <p>130 291 movies inside</p>
+      <p>${filmsAmount} movies inside</p>
     </section>`
   );
 };
 
 export class FilmStatistics extends AbstractComponent {
+  constructor(films) {
+    super();
+    this._films = films;
+  }
+
   getTemplate() {
-    return createFilmStatisticsComponent();
+    return createFilmStatisticsComponent(this._films);
   }
 }

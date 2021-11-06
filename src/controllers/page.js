@@ -108,7 +108,7 @@ export class PageController {
   }
 
   _renderFilms(films) {
-    const newFilms = renderFilmCards(films, this._filmsListComponent, this._onDataChange, this._onViewChange);
+    const newFilms = renderFilmCards(films, this._filmsListContainer, this._onDataChange, this._onViewChange);
     this._showedFilmControllers = this._showedFilmControllers.concat(newFilms);
     this._showingFilmCards = this._showedFilmControllers.length;
   }

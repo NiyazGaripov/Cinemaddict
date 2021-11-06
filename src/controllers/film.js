@@ -2,7 +2,7 @@ import {removeComponent, renderComponent, replaceComponent} from '../utils/rende
 import {FilmCard} from '../components/film-card';
 import {FilmInfo} from '../components/film-details';
 import {ESC_KEYCODE} from '../constants';
-import {Comments} from '../components/comments';
+import {Comments} from '../models/comments';
 import {CommentsController} from "./comments";
 
 const body = document.body;

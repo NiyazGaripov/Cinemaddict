@@ -13,3 +13,12 @@ export const getRandomArrayItem = (array) => {
 export const setValueFormat = (value) => {
   return value < MAX_VALUE ? `0${value}` : String(value);
 };
+
+export const setActiveClass = (container, element, activeClass) => {
+  const activeElement = container.querySelector(`.${activeClass}`);
+
+  if (!element.classList.contains(`${activeClass}`)) {
+    activeElement.classList.remove(activeClass);
+    element.classList.add(activeClass);
+  }
+};

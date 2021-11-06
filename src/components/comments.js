@@ -1,7 +1,7 @@
-import {AbstractComponent} from "./abstract-component";
+import {AbstractSmartComponent} from './abstract-smart-component';
 import {EMOJIS} from '../constants';
-import {formatCommentDate} from "../utils/date";
-import {encode} from "he";
+import {formatCommentDate} from '../utils/date';
+import {encode} from 'he';
 
 const createCommentComponent = (comment) => {
   const {id, text, emoji, author, date} = comment;
@@ -84,7 +84,7 @@ const parseFormData = (formData) => {
   };
 };
 
-export class Comments extends AbstractComponent {
+export class Comments extends AbstractSmartComponent {
   constructor(comments) {
     super();
     this._comments = comments;

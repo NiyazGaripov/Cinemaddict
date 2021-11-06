@@ -1,6 +1,7 @@
 import {AbstractComponent} from "./abstract-component";
 import {EMOJIS} from '../constants';
 import {formatCommentDate} from "../utils/date";
+import {encode} from "he";
 
 const createCommentComponent = (comment) => {
   const {id, text, emoji, author, date} = comment;
@@ -76,7 +77,7 @@ const createCommentsComponent = (comments, options = {}) => {
 const parseFormData = (formData) => {
   return {
     id: String(new Date() + Math.random()),
-    text: formData.get(`comment`),
+    text: encode(formData.get(`comment`)),
     emoji: formData.get(`comment-emoji`),
     author: `Keks`,
     date: new Date(),

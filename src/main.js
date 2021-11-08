@@ -5,7 +5,8 @@ import {FooterStatistics} from './components/footer-statistics.js';
 import {generateFilmsCards} from './mock/film-cards.js';
 import {PageController} from './controllers/page';
 import {Films} from './models/films';
-import {FilterController} from "./controllers/filter";
+import {FilterController} from './controllers/filter';
+import {Statistic} from './components/films-statistics';
 
 const FILM_CARDS_AMOUNT = 20;
 
@@ -27,5 +28,8 @@ renderComponent(pageMain, filmSectionComponent);
 
 const page = new PageController(filmSectionComponent, filmsModel);
 page.render();
+
+const statisticComponent = new Statistic();
+renderComponent(pageMain, statisticComponent);
 
 renderComponent(pageFooter, new FooterStatistics(filmCards));

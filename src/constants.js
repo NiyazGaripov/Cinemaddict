@@ -149,3 +149,5 @@ export const SortType = {
 };
 
 export const ESC_KEYCODE = 27;
+
+export const HIDDEN_CLASS = `visually-hidden`;

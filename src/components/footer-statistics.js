@@ -1,6 +1,6 @@
 import {AbstractComponent} from './abstract-component';
 
-const createFilmStatisticsComponent = (films) => {
+const createFooterStatisticsComponent = (films) => {
   const filmsAmount = films.length;
 
   return (
@@ -10,13 +10,13 @@ const createFilmStatisticsComponent = (films) => {
   );
 };
 
-export class FilmStatistics extends AbstractComponent {
+export class FooterStatistics extends AbstractComponent {
   constructor(films) {
     super();
     this._films = films;
   }
 
   getTemplate() {
-    return createFilmStatisticsComponent(this._films);
+    return createFooterStatisticsComponent(this._films);
   }
 }

@@ -55,4 +55,8 @@ export class FilterController {
   _onDataChange() {
     this.render();
   }
+
+  _recoveryListeners() {
+    this.setFilterClickHandler(this._filterClickHandler);
+  }
 }

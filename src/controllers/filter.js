@@ -42,6 +42,11 @@ export class FilterController {
     }
   }
 
+  setFilterClickHandler(callback) {
+    this._filterComponent.setFilterClickHandler(callback);
+    this._filterClickHandler = callback;
+  }
+
   _onFilterChange(filterType) {
     this._filmsModel.setFilter(filterType);
     this._activeFilterType = filterType;

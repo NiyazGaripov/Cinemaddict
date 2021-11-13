@@ -46,7 +46,7 @@ const sortFilms = (films, sortType, from, to) => {
 
 export class PageController {
   constructor(container, filmsModel) {
-    this._container = container.getElement();
+    this._container = container;
     this._filmsModel = filmsModel;
     this._showedFilmControllers = [];
     this._topRatedFilmControllers = [];
@@ -70,7 +70,7 @@ export class PageController {
   }
 
   render() {
-    const container = this._container;
+    const container = this._container.getElement();
     const films = this._filmsModel.getFilteredFilms();
     const filmsForShowing = films.slice(BEGIN_INDEX, this._showingFilmCards);
     const allFilms = this._renderFilmsList(this._filmsListComponent, filmsForShowing);
@@ -99,10 +99,20 @@ export class PageController {
     }
   }
 
+  show() {
+    this._container.show();
+    this._sortComponent.show();
+  }
+
+  hide() {
+    this._container.hide();
+    this._sortComponent.hide();
+  }
+
   _renderFilmsList(component, films) {
     const filmsListContainer = component.getListContainer();
 
-    renderComponent(this._container, component);
+    renderComponent(this._container.getElement(), component);
 
     return renderFilmCards(films, filmsListContainer, this._onDataChange, this._onViewChange);
   }

@@ -1,3 +1,5 @@
+import {AbstractComponent} from './abstract-component';
+
 const createMenuNavigationComponent = () => {
   return (
     `<nav class="main-navigation">
@@ -5,3 +7,9 @@ const createMenuNavigationComponent = () => {
     </nav>`
   );
 };
+
+export class MenuNavigation extends AbstractComponent {
+  getTemplate() {
+    return createMenuNavigationComponent();
+  }
+}

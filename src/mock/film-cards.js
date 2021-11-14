@@ -3,7 +3,7 @@ import {getRandomIntegerNumber, getRandomArrayItem} from '../utils/common';
 import {generateDescription} from '../utils/text';
 import {generateComments} from './comments.js';
 import {generateGenres} from './genres.js';
-import {getFilmDuration, getRandomDate} from '../utils/date';
+import {getRandomDate} from '../utils/date';
 
 const MIN_RATING = 0;
 const MAX_RATING = 9;
@@ -21,7 +21,7 @@ const generateFilmCard = () => {
   const title = getRandomArrayItem(FILM_TITLES);
   const rating = `${getRandomIntegerNumber(MIN_RATING, MAX_RATING)}.${getRandomIntegerNumber(MIN_RATING, MAX_RATING)}`;
   const release = getRandomDate();
-  const duration = getFilmDuration(getRandomIntegerNumber(MIN_FILM_DURATION, MAX_FILM_DURATION));
+  const duration = getRandomIntegerNumber(MIN_FILM_DURATION, MAX_FILM_DURATION);
   const genresAmount = getRandomIntegerNumber(MIN_GENRES_AMOUNT, MAX_GENRES_AMOUNT);
   const genres = generateGenres(genresAmount);
   const description = generateDescription(DESCRIPTION_FILMS, MIN_SENTENCES_AMOUNT, MAX_SENTENCES_AMOUNT);

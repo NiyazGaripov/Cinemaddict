@@ -1,12 +1,12 @@
 import {CHARACTER_LIMIT} from '../constants';
-import {getRandomArrayItem} from '../utils/common';
 import {getShortDescription} from '../utils/text';
 import {AbstractComponent} from './abstract-component';
-import {getFullYear} from '../utils/date';
+import {getFilmDuration, getFullYear} from '../utils/date';
 
 const createFilmCardComponent = (filmCard, comments) => {
   const {poster, title, rating, release, duration, genres, description, isWatchList, isWatched, isFavorite} = filmCard;
-  const genre = getRandomArrayItem(genres);
+  const filmDuration = getFilmDuration(duration);
+  const genre = genres.length === 0 ? `` : genres[0];
   const releaseYear = getFullYear(release);
   const commentsAmount = comments.length;
   const shortDescription = getShortDescription(description, CHARACTER_LIMIT);
@@ -20,8 +20,8 @@ const createFilmCardComponent = (filmCard, comments) => {
       <p class="film-card__rating">${rating}</p>
       <p class="film-card__info">
         <span class="film-card__year">${releaseYear}</span>
-        <span class="film-card__duration">${duration}</span>
-        <span class="film-card__genre">${genre.name}</span>
+        <span class="film-card__duration">${filmDuration}</span>
+        <span class="film-card__genre">${genre}</span>
       </p>
       <img src="./images/posters/${poster}" alt="${title}" class="film-card__poster">
       <p class="film-card__description">${shortDescription}</p>
@@ -63,15 +63,18 @@ export class FilmCard extends AbstractComponent {
   setWatchListButtonClickHandler(callback) {
     this.getElement()
       .querySelector(`.film-card__controls-item--add-to-watchlist`)
-      .addEventListener(`click`, callback);  }
+      .addEventListener(`click`, callback);
+  }
 
   setWatchedButtonClickHandler(callback) {
     this.getElement()
       .querySelector(`.film-card__controls-item--mark-as-watched`)
-      .addEventListener(`click`, callback);  }
+      .addEventListener(`click`, callback);
+  }
 
   setFavoriteButtonClickHandler(callback) {
     this.getElement()
       .querySelector(`.film-card__controls-item--favorite`)
-      .addEventListener(`click`, callback);  }
+      .addEventListener(`click`, callback);
+  }
 }

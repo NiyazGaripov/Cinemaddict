@@ -1,5 +1,13 @@
 import {AbstractSmartComponent} from './abstract-smart-component';
 
+const getWatchedFilmsDuration = (watchedFilms) => {
+  const watchedFilmsDurations = watchedFilms.map((film) => {
+    return film.duration;
+  });
+
+  return watchedFilmsDurations.reduce((acc, it) => acc + parseFloat(it));
+};
+
 const createStatisticComponent = () => {
   return (
     `<section class="statistic">

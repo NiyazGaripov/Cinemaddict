@@ -62,11 +62,11 @@ export const DESCRIPTION_FILMS = [
   `In rutrum ac purus sit amet tempus.`,
 ];
 
-export const PROFILES = [
-  `Novice`,
-  `Fan`,
-  `Movie Buff`,
-];
+export const UserRank = {
+  NOVICE: `Novice`,
+  FAN: `Fan`,
+  MOVIE_BUFF: `Movie Buff`,
+};
 
 export const FILTER_NAMES = [
   `All movies`,

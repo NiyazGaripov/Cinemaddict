@@ -27,13 +27,18 @@ export const formatCommentDate = (date) => {
   return dayjs(date).format(`YYYY/MM/DD HH:mm`);
 };
 
-export const getFilmDuration = (duration) => {
+export const getFilmDuration = (duration, isStatistic = false) => {
   const filmDuration = dayjs.duration(duration, `minutes`);
   let hours = filmDuration.hours();
   let minutes = filmDuration.minutes();
 
-  hours = hours > 0 ? `${hours}h` : ``;
-  minutes = minutes > 0 ? `${minutes}m` : ``;
+  if (isStatistic) {
+    hours = hours > 0 ? `${hours}<span class="statistic__item-description">h</span>` : ``;
+    minutes = minutes > 0 ? `${minutes}<span class="statistic__item-description">m</span>` : ``;
+  } else {
+    hours = hours > 0 ? `${hours}h` : ``;
+    minutes = minutes > 0 ? `${minutes}m` : ``;
+  }
 
   if (hours && minutes) {
     hours += ` `;

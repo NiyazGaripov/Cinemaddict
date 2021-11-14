@@ -2,9 +2,7 @@ import {getRandomArrayItem} from '../utils/common';
 import {GENRES} from '../constants';
 
 const generateGenre = () => {
-  return {
-    name: getRandomArrayItem(GENRES),
-  };
+  return getRandomArrayItem(GENRES);
 };
 
 export const generateGenres = (amount) => {

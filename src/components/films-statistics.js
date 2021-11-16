@@ -24,6 +24,22 @@ const getGenresAmount = (watchedFilms) => {
   return genresAmount;
 };
 
+const getTopGenre = (watchedFilms) => {
+  const genresAmount = getGenresAmount(watchedFilms);
+
+  let maxGenreAmount = 1;
+  let topGenre = ``;
+
+  Object.keys(genresAmount).map((genre) => {
+    if (maxGenreAmount === 1 || genresAmount[genre] > maxGenreAmount) {
+      maxGenreAmount = genresAmount[genre];
+      topGenre = genre;
+    }
+  });
+
+  return topGenre;
+};
+
 const createStatisticComponent = () => {
   return (
     `<section class="statistic">

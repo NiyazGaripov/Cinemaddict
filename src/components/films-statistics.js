@@ -165,7 +165,12 @@ const createStatisticComponent = ({films}) => {
 };
 
 export class Statistic extends AbstractSmartComponent {
+  constructor({films}) {
+    super();
+    this._films = films;
+  }
+
   getTemplate() {
-    return createStatisticComponent();
+    return createStatisticComponent(({films: this._films.getFilteredFilms()}));
   }
 }

@@ -17,7 +17,7 @@ const getWatchListFilms = (films) => {
   return films.filter((film) => film.isWatchList);
 };
 
-const getWatchedFilms = (films) => {
+export const getWatchedFilms = (films) => {
   return films.filter((film) => film.isWatched);
 };
 

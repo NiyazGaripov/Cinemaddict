@@ -161,3 +161,11 @@ export const PERIOD_NAMES = [
   `Month`,
   `Year`,
 ];
+
+export const PeriodFilterType = {
+  ALL_TIME: `all-time`,
+  TODAY: `today`,
+  WEEK: `week`,
+  MONTH: `month`,
+  YEAR: `year`,
+};

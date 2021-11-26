@@ -153,3 +153,11 @@ export const ESC_KEYCODE = 27;
 export const HIDDEN_CLASS = `visually-hidden`;
 
 export const BAR_HEIGHT = 50;
+
+export const PERIOD_NAMES = [
+  `All time`,
+  `Today`,
+  `Week`,
+  `Month`,
+  `Year`,
+];

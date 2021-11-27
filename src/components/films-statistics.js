@@ -192,4 +192,9 @@ export class Statistic extends AbstractSmartComponent {
   getTemplate() {
     return createStatisticComponent(({watchedFilms: this._filteredFilms, period: this._activePeriod, userRank: this._userRank}));
   }
+
+  show() {
+    super.show();
+    this.rerender();
+  }
 }

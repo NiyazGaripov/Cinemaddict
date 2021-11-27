@@ -46,6 +46,14 @@ const getTopGenre = (watchedFilms) => {
   return topGenre;
 };
 
+const getWatchedFilmsByPeriod = (watchedFilms, dateBegin) => {
+  if (!dateBegin) {
+    return watchedFilms;
+  }
+
+  return watchedFilms.filter((film) => film.watchedDate >= dateBegin);
+};
+
 const renderChart = () => {
   const statisticCtx = document.querySelector(`.statistic__chart`);
 

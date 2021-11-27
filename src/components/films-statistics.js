@@ -175,10 +175,21 @@ const createStatisticComponent = ({watchedFilms, period, userRank}) => {
 export class Statistic extends AbstractSmartComponent {
   constructor({films}) {
     super();
-    this._films = films;
+    this._allFilms = films.getFilteredFilms();
+    this._watchedFilms = getWatchedFilms(this._allFilms);
+    this._filteredFilms = this._watchedFilms;
+    this._userRank = getUserRank(this._watchedFilms.length);
+    this._activePeriod = PeriodFilterType.ALL_TIME;
+    this._charts = null;
+
+    this._renderCharts(this._filteredFilms);
+
+    this.periodChangeHandler = null;
+    this._onPeriodChangeHandler = this._onPeriodChangeHandler.bind(this);
+    this.setPeriodChangeHandler(this._onPeriodChangeHandler);
   }
 
   getTemplate() {
-    return createStatisticComponent(({films: this._films.getFilteredFilms()}));
+    return createStatisticComponent(({watchedFilms: this._filteredFilms, period: this._activePeriod, userRank: this._userRank}));
   }
 }

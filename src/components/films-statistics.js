@@ -197,4 +197,8 @@ export class Statistic extends AbstractSmartComponent {
     super.show();
     this.rerender();
   }
+
+  recoveryListeners() {
+    this.setPeriodChangeHandler(this.periodChangeHandler);
+  }
 }

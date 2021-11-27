@@ -245,4 +245,12 @@ export class Statistic extends AbstractSmartComponent {
     this._filteredFilms = getWatchedFilmsByPeriod(this._watchedFilms, dateBegin);
     this.rerender();
   }
+
+  _renderCharts(films) {
+    const element = this.getElement();
+    const statisticCtx = element.querySelector(`.statistic__chart`);
+
+    this._resetCharts();
+    this._charts = renderChart(statisticCtx, films);
+  }
 }

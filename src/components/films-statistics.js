@@ -206,4 +206,16 @@ export class Statistic extends AbstractSmartComponent {
     super.rerender();
     this._renderCharts(this._filteredFilms);
   }
+
+  setPeriodChangeHandler(callback) {
+    const periodInputs = this.getElement().querySelectorAll(`.statistic__filters-input`);
+
+    periodInputs.forEach((input) => {
+      input.addEventListener(`change`, (evt) => {
+        callback(evt.target.value);
+      });
+    });
+
+    this.periodChangeHandler = callback;
+  }
 }

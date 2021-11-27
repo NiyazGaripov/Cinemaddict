@@ -12,7 +12,7 @@ const getWatchedFilmsDuration = (watchedFilms) => {
     return film.duration;
   });
 
-  return watchedFilmsDurations.reduce((acc, it) => acc + parseFloat(it));
+  return watchedFilmsDurations.length === 0 ? 0 : watchedFilmsDurations.reduce((acc, it) => acc + parseFloat(it));
 };
 
 const getGenresAmount = (watchedFilms) => {

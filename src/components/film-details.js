@@ -110,10 +110,6 @@ export class FilmInfo extends AbstractSmartComponent {
     super.rerender();
   }
 
-  reset() {
-    this.rerender();
-  }
-
   setCloseButtonClickHandler(callback) {
     this.getElement().querySelector(`.film-details__close-btn`).addEventListener(`click`, callback);
     this._closeButtonClickHandler = callback;
@@ -139,9 +135,5 @@ export class FilmInfo extends AbstractSmartComponent {
     this.setWatchListInputChangeHandler(this._watchListInputChangeHandler);
     this.setWatchedInputChangeHandler(this._watchedInputChangeHandler);
     this.setFavoriteInputChangeHandler(this._favoriteInputChangeHandler);
-  }
-
-  getCommentsWrap() {
-    return this.getElement().querySelector(`.film-details__inner`);
   }
 }
